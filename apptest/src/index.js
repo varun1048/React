@@ -1,8 +1,28 @@
 import reactdom from 'react-dom'
 import React from 'react'
-import Test from './Test'
-import Test2 from './Test2'
-import Test3 from './Test3'
+import App from './App'
+// import {BrowserRouter} from 'react-router-dom'
+// import Test2 from './Test2'
+// import Test3 from './Test3'
+
+reactdom.render(
+    // <BrowserRouter>
+        <App />
+    // </BrowserRouter>
+    ,document.getElementById('root'))
+
+// class Output extends React.Component{
+//     render(){
+//         return(
+//             <div>
+//                 <Admin />
+//                 <Users />
+//             </div>
+//         )
+//     }
+// }
+
+
 
 // let element = react.createElement('h2',{},'hi from varun')
 // const myelement = (
@@ -15,15 +35,3 @@ import Test3 from './Test3'
 // function Fun (){
 //   return <h1>This is from fun component</h1>
 // }
-class Output extends React.Component{
-    render(){
-        return(
-            <div>
-                <Test3 />
-                <Test2 />
-                <Test />
-            </div>
-        )
-    }
-}
-reactdom.render(<Output />,document.getElementById('root'))

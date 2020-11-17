@@ -5,11 +5,10 @@ class Test extends output.Component{
     render(){
         return (
             <div className="Test">                
-                <button >varun</button>
-                <h1>varun {4*4}</h1>
+                varun
+                <h1>varun</h1>
             </div>
             );
     }
 }
-
 export default Test
