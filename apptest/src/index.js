@@ -1,7 +1,8 @@
 import reactdom from 'react-dom'
-// import react from 'react'
-// import Test from './Test'
+import React from 'react'
+import Test from './Test'
 import Test2 from './Test2'
+import Test3 from './Test3'
 
 // let element = react.createElement('h2',{},'hi from varun')
 // const myelement = (
@@ -14,4 +15,15 @@ import Test2 from './Test2'
 // function Fun (){
 //   return <h1>This is from fun component</h1>
 // }
-reactdom.render(<Test2 />,document.getElementById('root'))
+class Output extends React.Component{
+    render(){
+        return(
+            <div>
+                <Test3 />
+                <Test2 />
+                <Test />
+            </div>
+        )
+    }
+}
+reactdom.render(<Output />,document.getElementById('root'))
