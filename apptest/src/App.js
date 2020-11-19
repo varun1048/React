@@ -3,14 +3,14 @@ import Admin from './Admin.js'
 import Users from './Uers.js'
 import {Route, BrowserRouter,Link} from 'react-router-dom'
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.css'
 export default function App (){
   return (
     <div className="App">
       <BrowserRouter>
-        <Link to='./Test'>Test2</Link>
-        <Route exact path="/a" component={Admin}  />
+        <Route exact path="/" component={Admin}  />
         <Route exact path="/u" component={Users}  />
+        <Link to='./Test'>Test2</Link>
       </BrowserRouter>
     </div>
   );

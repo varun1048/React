@@ -1,15 +1,17 @@
 import reactdom from 'react-dom'
 import React from 'react'
-import App from './App'
+import 'bootstrap/dist/css/bootstrap.css'
+import Counters from './components/counters.jsx'
+   
+
+// import App from './App'
 // import {BrowserRouter} from 'react-router-dom'
 // import Test2 from './Test2'
 // import Test3 from './Test3'
 
-reactdom.render(
+reactdom.render(<Counters />,document.getElementById('root'))
     // <BrowserRouter>
-        <App />
     // </BrowserRouter>
-    ,document.getElementById('root'))
 
 // class Output extends React.Component{
 //     render(){
