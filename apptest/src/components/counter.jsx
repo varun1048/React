@@ -3,10 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 export default class  Counter extends Component {
     
-    // style={
-        //     fontSize :20,
-        //     fontWeight :"bold"
-        // }
+
         // constructor(){
             //     super()
             //     this.handleIncrement = this.handleIncrement.bind(this)
@@ -17,25 +14,33 @@ export default class  Counter extends Component {
                 //     return this.state.tags.map(tag=><li key={tag}>{tag}</li>)
                 // }
                 
-    state = {
-        value:this.props.counter.value,
-        // tags : ['tag1','tag2','tag3']
-        //'tag1','tag2','tag3'
-    }
-    handleIncrement = () =>{
-        // console.log('Incremented',product)
-        this.setState({value:this.state.value +1})
-    }
+    // state = {
+    //     value:this.props.counter.value,
+    //     // tags : ['tag1','tag2','tag3']
+    //     //'tag1','tag2','tag3'
+    // }
+
+    // handleIncrement = () =>{
+    //     // console.log('Incremented',product)
+    //     this.setState({value:this.state.value +1})
+    // }
     // helpIncrement = ()=>{
     //     this.handleIncrement()
     // }
 
+    style={
+        textAlign :" center",
+        fontSize :20,
+        fontWeight :"bold"
+    }
+
     render() {
-    
-        return (<React.Fragment>
+        // const {onIncrement,} = this.props
+        return (<div style={this.style}>
 
             <samp className={this.getBadgeClass()}> {this.fromatcount()}</samp>
-            <button onClick={ this.handleIncrement } className='btn btn-secondary m-1'>Increment </button> 
+            <button onClick={()=>this.props.onIncrement(this.props.counter)} 
+                className='btn btn-secondary m-1'>Increment </button> 
             <button onClick={ () => this.props.on(this.props.counter.id) } 
                 className='btn btn-danger m-1'>
 
@@ -46,17 +51,17 @@ export default class  Counter extends Component {
                 {this.state.tags.length === 0 && "please Enter a values"}
                 {this.renderTags()}
             </ul> */}
-        </React.Fragment>);
+        </div >);
     }
 
     fromatcount = ()=>{
-        const {value} = this.state
+        const {value} = this.props.counter
         return value === 0 ? "zero": value
      }
 
     getBadgeClass() {
         let fun = "badge m-2 badge-";
-        fun += (this.state.value === 0) ? "warning" : "primary";
+        fun += (this.props.counter.value === 0) ? "warning" : "primary";
         return fun;
     }
 } 

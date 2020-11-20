@@ -2,10 +2,13 @@
 import Admin from './Admin.js'
 import Users from './Uers.js'
 import {Route, BrowserRouter,Link} from 'react-router-dom'
-import './App.css';
+// import './App.css';
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
+
 export default function App (){
   return (
+
     <div className="App">
       <BrowserRouter>
         <Route exact path="/" component={Admin}  />
