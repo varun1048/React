@@ -40,10 +40,9 @@ export default class  Counter extends Component {
 
             <samp className={this.getBadgeClass()}> {this.fromatcount()}</samp>
             <button onClick={()=>this.props.onIncrement(this.props.counter)} 
-                className='btn btn-secondary m-1'>Increment </button> 
+                className='btn btn-secondary m-2'>{this.props.counter.fruits} </button> 
             <button onClick={ () => this.props.on(this.props.counter.id) } 
-                className='btn btn-danger m-1'>
-
+                className='btn btn-danger m-2'>
                 delete</button> <br/>
 
 

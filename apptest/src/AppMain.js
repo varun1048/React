@@ -6,11 +6,11 @@ import Counters from './components/counters.jsx'
 class App extends React.Component {
     state = { 
         counters:[
-            {id:1, value:1},
-            {id:2, value:2},
-            {id:3, value:3},
-            {id:4, value:4},
-            {id:5, value:5},
+            {id:1, value:0 ,fruits:'banana'},
+            {id:2, value:0 ,fruits:'drawing'},
+            {id:3, value:0 ,fruits:'orange'},
+            {id:4, value:0 ,fruits:'mango'},
+            {id:5, value:0 ,fruits:'banana'},
         ]  
     }
     handleReset = ()=>{
@@ -36,6 +36,9 @@ class App extends React.Component {
         console.log(counter)
         this.setState({counters})
     }
+    handleAdding = counter =>{
+        
+    }
 
 
     render() { 
@@ -50,6 +53,7 @@ class App extends React.Component {
                 doReset={this.handleReset}
                 doIncrement={this.handleIncrement}
                 doDelete={this.handleDelete}
+                doAdding={this.handleAdding}
               />
             </main>
           </React.Fragment>
