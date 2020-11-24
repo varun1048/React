@@ -16,7 +16,9 @@ class StateTest extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <h1>{this.props}
+                hi{false && "varunsumma"}
+                <h1>{
+                    }
                     {this.state.str}
                  <Chiled send={"varun"}/>
                 </h1>
