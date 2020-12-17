@@ -3,8 +3,9 @@ import Chiled from './child'
 class StateTest extends Component {
     constructor(){
         super();
+        let datas = "this from varun "
         this.state = {
-            str:"manadu",
+            str:datas,
         }
     }
     

@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 const Navbar = (props) => {
     return (
-        <nav className="navbar h3 navbar-light bg-light">
+        <nav className="navbar m-2 h1 navbar-light bg-secondary ">
         Countener
             <samp className="badge badge-pill badge-secondary">
+                <button className="btn btn-danger m-1"> enter </button>
                 Total prodects:{props.totelcounter}
             </samp>
         </nav>

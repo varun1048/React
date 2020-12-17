@@ -5,11 +5,12 @@
 // import './App.css';
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import Test from './Tutorial/stateTest'
+// import Test from './Tutorial/stateTest'
+import Form from './Tutorial/form'
 export default function App (){
   return (
   <React.Fragment>
-    <Test />
+    <Form />
   </React.Fragment>
 
     // <div className="App">

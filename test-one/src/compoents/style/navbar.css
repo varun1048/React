@@ -1,0 +1,16 @@
+.link{
+    color: black; 
+}
+
+.link:hover{
+    text-decoration: none;
+}
+.link2{
+    color: antiquewhite;
+}
+.link2:hover{
+    text-decoration: none;
+}
+
+
+
