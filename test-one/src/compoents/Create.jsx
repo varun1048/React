@@ -10,6 +10,7 @@ export default function Create(){
         title:" ",
         content:" "
     })
+
     function handleChange(event){
         const {name,value} = event.target 
         setInput(prevInput =>{
@@ -22,7 +23,7 @@ export default function Create(){
     function handleClick(event){
         event.preventDefault();
         console.log(input)
-
+        
         const newNote = {
             title:input.title,
             content:input.content
@@ -57,4 +58,4 @@ export default function Create(){
             </button>
         </div>
     )
-}
+}   
