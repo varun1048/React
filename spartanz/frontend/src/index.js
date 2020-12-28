@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Seting from './hooks/set_State'
+import App from './app.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Seting />
+    <App />    
   </React.StrictMode>,
   document.getElementById('root')
-  
 );
-
