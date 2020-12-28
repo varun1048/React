@@ -1,6 +1,6 @@
 import React ,{ useState } from "react"
 import axios from "axios"
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import "./style/navbar.css"
 
 
@@ -20,6 +20,7 @@ export default function Create(){
             }
         })
     }
+
     function handleClick(event){
         event.preventDefault();
         console.log(input)
@@ -28,17 +29,19 @@ export default function Create(){
             title:input.title,
             content:input.content
         }
+        
 
         axios.post("http://localhost:3001/create",newNote)
     }
     return (
         <div className="container">
             <h3 className="m-1 text-success">Create note</h3>
-            <form>
+
+            <form method="post" action="/datas">
 
             <div class="form-group">
 
-                <input name="title"  onChange={handleChange} placeholder="Enter title" 
+                <input name="title"  onChange={()=>handleChange} placeholder="Enter title" 
                 autoCapitalize="off" className="form-control"     type="text"/>        
             
             </div>
@@ -51,11 +54,11 @@ export default function Create(){
 
                 </div>                  
             </form>
-            <button type="submit" onClick={handleClick} class="btn btn-primary">
-                <Link  className="link2 "  to='/notes'>
-                    Add note
-                </Link>
+            <button type="submit" className="btn btn-info"  onClick={handleClick} >
+                su
             </button>
+
+     
         </div>
     )
 }   

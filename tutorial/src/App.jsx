@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Author from './author'
+import Author from "./mainConcepts/author"
 
 function printf(inner){
   return inner.firstName + " \t" + inner.lastName
