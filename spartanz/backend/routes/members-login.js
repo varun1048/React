@@ -16,12 +16,18 @@ router.route("/save").post((req,res) =>{
         .then(()=>res.send("400"))
 })
 
-router.route('/profile').get((req,res)=>{
+router.route('/').get((req,res)=>{
+    console.log("vathi is comming")
+})
+
+
+router.route('/profile').post((req,res)=>{
 
     membersDB.findOne({"number":String(req.body.number)})
     .then(datas=>{
-        console.log("varun is comming")
-        res.send(datas.name)
+        console.log(datas.name)
+        res.send(datas)
+    
     })
     .catch((err)=>{
         res.send(err)

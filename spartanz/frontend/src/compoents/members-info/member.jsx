@@ -1,8 +1,8 @@
 // import ax from ""
 // import { useState } from "react"
-export default function Member() {
-    // const [name,setName] = useState(0) 
+export default function Member(pro) {
+    
     return <div className="container">
-        wellcome 
+        wellcome  {pro}
     </div>
 }
