@@ -1,34 +1,33 @@
 import {Link } from 'react-router-dom'
 
 export default function Navbar(params) {
-    return <nav class="navbar navbar-expand-lg bg-light justify-content-between">
+    return <nav class="navbar navbar-expand-sm bg-dark d-flex justify-content-between">
 
-    <ul class="navbar-nav">
+    <ul class="navbar-nav   ">
 
-        <li class="nav-item">
-            <Link to="/" className="nav-item nav-link active">
-                SPARTANZ            
-            </Link>
-        </li>
+            <li class="nav-item">
+                <Link to="/" className="nav-item nav-link active">
+                    SPARTANZ            
+                </Link>
+            </li>
         
     </ul>
 
-    <ul class="navbar-nav justify-content-end">
-
-
+    <ul class="navbar-nav  d-flex ">
         <li class="nav-item" >
             <Link to="/register" className="nav-item nav-link ">
                 Join now
             </Link>
         </li>
-    
+
         <li className="nav-item ">
-            <Link to="/member"  className="nav-item nav-link ">
+            <Link to="/members"  className="nav-item nav-link ">
                 Members
             </Link>
         </li>
-    </ul>
+    
 
+    </ul>
 </nav>
 
 }
