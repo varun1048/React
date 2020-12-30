@@ -1,4 +1,4 @@
-import {BrowserRouter as Router , Route} from 'react-router-dom'
+import {BrowserRouter as Router , Route, Switch} from 'react-router-dom'
 
 import Navbar from "./compoents/main/navbar"
 import MainBody from './compoents/main/mainBody'
@@ -11,6 +11,7 @@ export default function App() {
     return <div>
         <Router >
             <Navbar />
+            <Switch>
 
             <Route exact path="/" >
                 <MainBody />
@@ -23,10 +24,10 @@ export default function App() {
             <Route  path="/register" >
                 <Register   />
             </Route>
-            <Route  path="/member" >
+            <Route  path="/member/:name" >
                 <Member />
-                {/* <   /> */}
             </Route>
+            </Switch>
         </Router>
     </div>
 }

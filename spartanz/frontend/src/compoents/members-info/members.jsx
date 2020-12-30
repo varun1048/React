@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react'                        
+import {useHistory} from 'react-router-dom'
 
 import axios from "axios"
-export default function Members(params) {
+export default function Members() {
+    const history = useHistory()
     let st={
         "width":"400px"
     }
@@ -23,13 +25,16 @@ export default function Members(params) {
         
         axios.post("http://localhost:5000/members/profile",{"number":input.userNumber})
         .then((datas)=>{
-            console.log(datas.data.name)
-        })
-        .catch((err)=>{
-            console.log(err)
 
-        })
-        
+            if(datas.data.name !== undefined ){
+
+                history.push(`/member/${datas.data.name}`)
+                
+            }else{
+                alert("unkwon member")
+            }
+
+        })   
     }
 
 
@@ -48,8 +53,7 @@ export default function Members(params) {
                             placeholder="Enter your mobile number" name="userNumber"/>
                         
                         </div>
-                        
-                        <button type="submit" onClick={handleClick} class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" onClick={handleClick}  >Submit</button>
                     </form>
 
                 </div>

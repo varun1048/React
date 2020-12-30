@@ -1,8 +1,9 @@
-// import ax from ""
-// import { useState } from "react"
-export default function Member(pro) {
-    
+import {useParams} from 'react-router-dom'
+
+export default function Member() {   
+    const {name}  = useParams()
+
     return <div className="container">
-        wellcome  {pro}
+        wellcome  {name} 
     </div>
 }

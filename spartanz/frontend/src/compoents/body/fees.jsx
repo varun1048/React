@@ -5,7 +5,7 @@ export default function Fess(params) {
     <table className="table table-hover">
       <thead>
         <tr>
-          <th>
+          <th> 
             S.No
           </th>
           <th>

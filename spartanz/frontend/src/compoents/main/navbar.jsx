@@ -21,7 +21,7 @@ export default function Navbar(params) {
         </li>
 
         <li className="nav-item ">
-            <Link to="/members"  className="nav-item nav-link ">
+            <Link to="/members/"  className="nav-item nav-link ">
                 Members
             </Link>
         </li>
