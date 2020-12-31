@@ -24,7 +24,7 @@ export default function App() {
             <Route  path="/register" >
                 <Register   />
             </Route>
-            <Route  path="/member/:name" >
+            <Route  path="/member/:id" >
                 <Member />
             </Route>
             </Switch>

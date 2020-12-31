@@ -1,9 +1,19 @@
-import {useParams} from 'react-router-dom'
+// import axios from "axios"
+import { useState } from "react"
 
-export default function Member() {   
-    const {name}  = useParams()
+export default function Member(){
 
-    return <div className="container">
-        wellcome  {name} 
-    </div>
+    const [notes, setNotes] = useState(
+
+        
+        fetch("http://localhost:5000/members/profile").then(res =>{
+            if(res.ok){
+                return res.json()
+            }
+        }).then(jsonR => setNotes(jsonR) )
+
+        )
+    console.log("varun "+notes)
+// axios.get("http://localhost:5000/members/profile")
+    return <div>wellcome  </div>
 }

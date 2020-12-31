@@ -1,7 +1,7 @@
 import React, { useState } from 'react'                        
 import {useHistory} from 'react-router-dom'
-
 import axios from "axios"
+
 export default function Members() {
     const history = useHistory()
     let st={
@@ -27,8 +27,7 @@ export default function Members() {
         .then((datas)=>{
 
             if(datas.data.name !== undefined ){
-
-                history.push(`/member/${datas.data.name}`)
+                history.push(`/member/${ datas.data.number}`)
                 
             }else{
                 alert("unkwon member")
