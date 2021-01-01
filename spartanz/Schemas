@@ -1,0 +1,35 @@
+
+let member={
+    name:"varun",
+    number:20,
+    bio:{
+        age:18,
+        gender:"meal",
+        status  :"single",
+        address:"vada chennai"
+
+    },
+
+    test:[
+        {
+            date:"12",
+            height:"122cm",
+            weight:"78.kg",
+            arm:14,
+            chest:41,
+            waist:39,
+
+            fiexibility:-1,
+            push:"19m",
+            curlUps:4,
+            squats:37
+        
+
+        }
+    ],
+    package:{
+        Duration:"Monthly",
+        taken:"12:12:2020",
+        end:"12:12:2099"
+    }
+}
