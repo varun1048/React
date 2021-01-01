@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
   
-      <Nav  bar />
+      <Navbar />
         <Route path="/" exact>
           {/* hoeme page */}
           <Home />   

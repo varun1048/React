@@ -1,19 +1,19 @@
-// import axios from "axios"
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import {useParams} from 'react-router-dom'
+
 
 export default function Member(){
-
-    const [notes, setNotes] = useState(
-
-        
-        fetch("http://localhost:5000/members/profile").then(res =>{
-            if(res.ok){
-                return res.json()
-            }
-        }).then(jsonR => setNotes(jsonR) )
-
-        )
-    console.log("varun "+notes)
-// axios.get("http://localhost:5000/members/profile")
-    return <div>wellcome  </div>
+const  Params = useParams()
+const [notes, setNotes] = useState(0)
+    useEffect(()=>{
+        axios.post("http://localhost:5000/members/profile",{"number":Params.id})
+        .then((datas)=>{
+            setNotes( datas.data )
+        })
+    })
+    return <div className="container">
+        wellcome {notes.name}  <br/>
+        Number {notes.number}
+    </div>
 }

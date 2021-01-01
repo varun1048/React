@@ -9,6 +9,7 @@ export default function Notes(){
 
     useEffect(()=>{
         fetch("/notes").then(res =>{
+            console.log(res)
             if(res.ok){
                 return res.json()
             }
