@@ -4,18 +4,17 @@ const membersDB = require("../models/mongoModels")
 
 router.route("/save").post((req,res) =>{
 
-    let name= req.body.name
-    let number =  req.body.number
-    let bio = req.body.bio
+    let name= req.body.info.name
+    let number =  req.body.info.number
+
+
     let data = new membersDB( {
         name,   
         number,
-        bio
     })
    
     data.save()
     .then((ress)=>res.send(ress))   
-
 })
 
 router.route('/').get((req,res)=>{

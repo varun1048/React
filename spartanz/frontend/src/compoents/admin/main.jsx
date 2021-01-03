@@ -1,3 +1,6 @@
-export default function Main(){
-    return <h1>admin</h1>
+export default function ActiveMembers(){
+    return<h1>
+        
+        SPARTANZ
+    </h1>
 }

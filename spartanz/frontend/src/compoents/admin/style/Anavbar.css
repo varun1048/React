@@ -1,0 +1,13 @@
+.Anavbar{
+    color:black; 
+    font-size:medium; 
+}
+.S-nav{
+    background-color: rgb(236, 46, 46);
+}
+
+.Anavbar:hover {
+    color:black; 
+    font-size: large;
+
+}  

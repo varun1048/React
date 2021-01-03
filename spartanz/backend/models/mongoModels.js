@@ -3,9 +3,6 @@ const mongoose = require("mongoose")
 const  schema = mongoose.Schema ({
     name:String,
     number:Number,
-    bio:{
-        age:Number
-    }
 
 })
 
