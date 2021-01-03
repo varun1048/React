@@ -20,6 +20,7 @@ export default function Join(){
             }
         })
     }
+
     function handleClick(event){
         event.preventDefault();
         if(input.name !== 0 && input.number !== 0  ){
@@ -28,7 +29,7 @@ export default function Join(){
                 "info":input,
             }).then(()=>{
                 console.log("done")
-                history.push('/activeMembers')
+                history.push('/admin')
                 
             })
         }
@@ -55,7 +56,7 @@ export default function Join(){
                         </div>
                         
 
-                            <button type="submit" class="btn btn-primary" onClick={handleClick}  >Submit</button>
+                            <button type="submit" class="btn btn-dark" onClick={handleClick}  >Submit</button>
                     </form>
 
                 </div>

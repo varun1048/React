@@ -9,7 +9,7 @@ import Members from './compoents/members-info/members.jsx'
 import Main from "./compoents/admin/main";
 import Anavbar from "./compoents/admin/Anavbar";
 import Join from './compoents/admin/join'
-import ActiveMembers from './compoents/admin/activeMembers'
+import LiveMembers from './compoents/admin/liveMembers'
 
 
 export default function App() {
@@ -32,9 +32,9 @@ export default function App() {
                     <Anavbar />
                     <Join />
                 </Route>
-                <Route path="/activeMembers">
+                <Route path="/liveMembers">
                     <Anavbar />
-                    <ActiveMembers />
+                    <LiveMembers />
                 </Route>
 
 

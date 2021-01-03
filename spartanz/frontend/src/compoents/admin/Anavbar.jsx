@@ -2,7 +2,7 @@ import {Link } from 'react-router-dom'
 import "./style/Anavbar.css"
 
 export default function Anavbar(params) {
-    return <nav class="navbar navbar-expand-sm  S-nav
+    return <nav class="navbar   S-nav
      d-flex justify-content-between   ">
 
 
@@ -18,17 +18,21 @@ export default function Anavbar(params) {
 
     <ul class="navbar-nav   ">
             <li class="nav-item">
+                <b>
                 <Link to="/admin" className="nav-item nav-link Anavbar active">
-                    SPARTANZ            
+                    <h4>
+                        SPARTANZ            
+                    </h4>
                 </Link>
+                </b>
             </li>
     </ul>
 
 
     <ul class="navbar-nav   ">
         <li className="nav-item ">
-            <Link to="activeMembers"  className="nav-item Anavbar nav-link ">
-                active Members
+            <Link to="liveMembers"  className="nav-item Anavbar nav-link ">
+                Live Members
             </Link>
         </li>
     </ul>

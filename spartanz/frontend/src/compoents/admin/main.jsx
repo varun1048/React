@@ -1,6 +1,8 @@
-export default function ActiveMembers(){
-    return<h1>
-        
-        SPARTANZ
-    </h1>
+import Gird from "./body/gird";
+
+export default function liveMembers(){
+    return<div className="container">
+        <h2>SPARTANZ </h2>
+        <Gird />
+    </div>
 }
