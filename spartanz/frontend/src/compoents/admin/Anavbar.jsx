@@ -1,10 +1,11 @@
 import {Link } from 'react-router-dom'
+import "./Anavbar.css"
 
-export default function Navbar(params) {
-    return <nav class="navbar navbar-expand-sm bg-dark d-flex justify-content-between">
+export default function Anavbar(params) {
+    return <nav class="navbar navbar-expand-sm Anavbar  d-flex justify-content-between">
 
     <ul class="navbar-nav   ">
-
+dfg
             <li class="nav-item">
                 <Link to="/" className="nav-item nav-link active">
                     SPARTANZ            
@@ -22,7 +23,7 @@ export default function Navbar(params) {
 
         <li className="nav-item ">
             <Link to="/members/"  className="nav-item nav-link ">
-                Members
+                active Members
             </Link>
         </li>
     
