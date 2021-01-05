@@ -14,5 +14,3 @@ app.use('/admin',require('./routes/admin'))
 
 app.listen(5000,console.log("Backend server under port:5000"))
 
-
-

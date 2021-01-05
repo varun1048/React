@@ -9,7 +9,7 @@ export default function Anavbar(params) {
 
     <ul class="navbar-nav   ">
         <li class="nav-item" >
-            <Link to="/join" className="nav-item Anavbar nav-link ">
+            <Link to="/admin/join" className="nav-item Anavbar nav-link ">
                 Join now
             </Link>
         </li>
@@ -31,7 +31,7 @@ export default function Anavbar(params) {
 
     <ul class="navbar-nav   ">
         <li className="nav-item ">
-            <Link to="liveMembers"  className="nav-item Anavbar nav-link ">
+            <Link to="/admin/liveMembers"  className="nav-item Anavbar nav-link ">
                 Live Members
             </Link>
         </li>

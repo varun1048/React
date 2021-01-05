@@ -6,10 +6,7 @@ import Register  from "./compoents/members-info/register "
 import Member from "./compoents/members-info/member.jsx"
 import Members from './compoents/members-info/members.jsx'
 
-import Main from "./compoents/admin/main";
-import Anavbar from "./compoents/admin/Anavbar";
-import Join from './compoents/admin/join'
-import LiveMembers from './compoents/admin/liveMembers'
+
 
 
 export default function App() {
@@ -18,26 +15,14 @@ export default function App() {
            <Router >
 
             <Switch>
-                <Route exact path="/" >
+           
+
+               <Route exact path="/" >
                     <Navbar />
                     <MainBody />
                 </Route>
 
-                <Route path="/admin">
-                    <Anavbar />
-                    <Main />
-                </Route>
-
-                <Route path="/join">
-                    <Anavbar />
-                    <Join />
-                </Route>
-                <Route path="/liveMembers">
-                    <Anavbar />
-                    <LiveMembers />
-                </Route>
-
-
+ 
 
                 <Route  path="/members" >
                     <Navbar />

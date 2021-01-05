@@ -1,8 +1,12 @@
-import Gird from "./body/gird";
+import AdminLinks from "./body/adminLinks";
 
-export default function liveMembers(){
+export default function Main(){
     return<div className="container">
-        <h2>SPARTANZ </h2>
-        <Gird />
-    </div>
+    <div  className="row">
+       <AdminLinks />
+       <div className="col-sm-2">
+           Admin page <br/>
+       </div>
+   </div>
+</div>
 }
