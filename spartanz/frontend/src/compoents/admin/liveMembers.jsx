@@ -5,13 +5,13 @@ export default function LiveMembers(){
     let [members,setMembers] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/admin/getAll")
+        axios.post("http://localhost:5000/admin/getAll")
         .then(datas =>{
-            console.log(datas.data.count)
-            // setMembers(datas.data)
+            setMembers(datas.data)
         })
     })
-
+    console.log(members)
+    
     return  <div className="container">
         
         <h1> <span class="badge badge-secondary">Members</span></h1>
@@ -23,7 +23,7 @@ export default function LiveMembers(){
             </thead>
             <tbody>
                 {/* {members.map(element => <tr>
-                    <td> {element.name} </td>
+                    <td key={element} > {element} </td>
                 </tr> )} */}
             </tbody>
         </table>
