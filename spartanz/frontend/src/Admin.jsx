@@ -10,6 +10,7 @@ import MemberInfo from './compoents/admin/body/memberInfo';
 import SetExercise from './compoents/admin/body/SetExercise';
 import TackAssessment from './compoents/admin/body/TackAssessment';
 import ExpredPackage from './compoents/admin/body/ExpredPackage';
+import Bio from './compoents/admin/body/bio';
 
 export default function Admin() {
 return <Router>
@@ -37,6 +38,11 @@ return <Router>
     <Route path="/admin/memberInfo"> 
         <Anavbar /> 
         <MemberInfo />
+    </Route>
+
+    <Route path="/admin/bio/:id"> 
+        <Anavbar /> 
+        <Bio />
     </Route>
 
     <Route path="/admin/SetExercise"> 

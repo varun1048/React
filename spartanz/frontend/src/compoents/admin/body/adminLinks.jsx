@@ -10,12 +10,7 @@ export default function AdminLinks(){
         <li class="nav-item">
             <Link className="nav-link" to="/admin/memberInfo"> Member Info </Link>
         </li>
-        <li class="nav-item">
-            <Link className="nav-link" to="/admin/SetExercise">Set Exercise </Link>
-        </li>
-        <li class="nav-item">
-            <Link className="nav-link" to="/admin/TackAssessment">Tack Assessment</Link>
-        </li>     
+
         <li class="nav-item">
             <Link className="nav-link" to="/admin/ExpredPackage">Expred Package</Link>
         </li>

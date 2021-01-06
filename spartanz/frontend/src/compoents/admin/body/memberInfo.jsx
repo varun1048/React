@@ -1,11 +1,13 @@
 import axios from "axios"
 import React,{ useEffect ,useState } from "react"
+import {useHistory} from 'react-router-dom'
+
 
 import AdminLinks from "./adminLinks";
 
-
-
 export default function MemberInfo(){
+    const history = useHistory()
+
     let [members,setMembers] = useState([])
     
     let [finder,setFinder] = useState({
@@ -36,6 +38,14 @@ export default function MemberInfo(){
             }
         })
     }
+
+    function handleClick(id){
+        console.log(id)
+        history.push(`/admin/bio/${id}`)
+    }
+
+
+    
     return    <div className="container ">
      <div  className="row">
         <AdminLinks />
@@ -53,16 +63,17 @@ export default function MemberInfo(){
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Number</th>
                     </tr>
                 </thead>
                 <tbody>
                                     
                     { members.map(element => {
-                            return <tr key={element.name} >
+                            return<tr key={element.name} >
                                     <td>{element.name}</td>
-                                    <td> {element.number} </td>
-                                </tr>
+                                    <td> <button onClick={() => handleClick(element._id)} className="btn btn-primary">Bio</button> </td>
+                                    <td> <button className="btn btn-success">Tack Assessment</button> </td>
+                                    <td> <button className="btn btn-secondary">Set Exercise</button> </td>
+                               </tr> 
                             }
                      )}
                 </tbody>

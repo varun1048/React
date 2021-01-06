@@ -11,6 +11,9 @@ const [notes, setNotes] = useState(0)
         .then((datas)=>{
             setNotes( datas.data )
         })
+        axios.post("http://localhost:5000/admin/getAll",{"id":notes._id})
+
+
     })
     return <div className="container">
         wellcome {notes.name}  <br/>

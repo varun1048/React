@@ -6,7 +6,10 @@ export default function LiveMembers(){
 
     useEffect(()=>{
         axios.get("http://localhost:5000/admin/getAll")
-        .then(datas =>setMembers(datas.data) )
+        .then(datas =>{
+            console.log(datas.data.count)
+            // setMembers(datas.data)
+        })
     })
 
     return  <div className="container">
@@ -16,14 +19,12 @@ export default function LiveMembers(){
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Number</th>
                 </tr>
             </thead>
             <tbody>
-                {members.map(element => <tr>
+                {/* {members.map(element => <tr>
                     <td> {element.name} </td>
-                    <td> {element.number} </td>
-                </tr> )}
+                </tr> )} */}
             </tbody>
         </table>
      </div>
