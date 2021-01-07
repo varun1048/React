@@ -1,12 +1,19 @@
-import {  useState } from 'react'
+import axios from "axios"
+
+import {  useState ,useEffect } from 'react'
 import {Link } from 'react-router-dom'
+
 import "./style/Anavbar.css"
 
-export default function Anavbar(params) {
-    let count =  useState(0)
-    // useEffect(()=>{
 
-    // })
+export default function Anavbar(params) {
+    let [count,setCount] =  useState(0)
+    useEffect(()=>{
+        axios.get("http://localhost:5000/members/live")
+        .then(datas =>{
+            setCount(datas.data)
+        })
+    })
 
     return <nav class="navbar   S-nav
      d-flex justify-content-between   ">
@@ -38,7 +45,7 @@ export default function Anavbar(params) {
     <ul class="navbar-nav   ">
         <li className="nav-item ">
             <Link to="/admin/liveMembers"  className="nav-item Anavbar nav-link ">
-                Live Members <span class="badge badge-light">{count}</span>
+                Live Members <span class="badge badge-light">{count.length}</span>
             </Link>
         </li>
     </ul>

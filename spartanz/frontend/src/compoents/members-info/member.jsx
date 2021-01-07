@@ -11,9 +11,10 @@ const [notes, setNotes] = useState(0)
         .then((datas)=>{
             setNotes( datas.data )
         })
-        .catch(err => console.log(err))
-        axios.post("http://localhost:5000/admin/getAll",{"id":notes._id,"name":notes.name})
+        
+        // axios.post("http://localhost:5000/admin/live",{"id":notes})
     })
+
     return <div className="container">
         wellcome {notes.name}  <br/>
         Number {notes.number}

@@ -17,29 +17,31 @@ router.route("/save").post((req,res) =>{
     .then((ress)=>res.send(ress))   
 })
 
-router.route('/').get((req,res)=>{
-    console.log("vathi is comming")
-})
-
-
+let member =  new Array()
 router.route('/profile').post((req,res)=>{
-
     membersDB.findOne({"number":String(req.body.number)})
     .then(datas=>{
         res.send(datas)
+        if(!member.includes(datas.name)){   
+            member.push( datas.name)
+        }
     })
     .catch((err)=>{
         res.send(err)
     })
 })
 
-
-
-
-
-
+router.route('/live').get((req,res)=>{
+    res.send(member)
+})
+member = []
 
 
 
 
 module.exports = router
+
+
+
+
+
