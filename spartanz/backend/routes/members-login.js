@@ -6,12 +6,9 @@ router.route("/save").post((req,res) =>{
 
     let name= req.body.info.name
     let number =  req.body.info.number
-    let assessment = [{"p":"2"}]    
-
     let data = new membersDB({
         name,   
         number,
-        assessment
     })
    
     data.save()

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function AdminLinks(){
-    return <div className="col-sm-3 " >
+    return <div className="col-sm-2 " >
             <br/> 
         <ul class="nav flex-column">
         <li class="nav-item">

@@ -50,7 +50,7 @@ return <Router>
         <SetExercise />
     </Route>
 
-    <Route path="/admin/TackAssessment"> 
+    <Route path="/admin/TackAssessment/:id"> 
         <Anavbar /> 
         <TackAssessment />
     </Route>

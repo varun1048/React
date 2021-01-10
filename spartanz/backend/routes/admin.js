@@ -1,4 +1,3 @@
-const { json } = require("express")
 const express = require("express")
 const router = express.Router()
 const membersDB = require("../models/mongoModels")
@@ -14,18 +13,18 @@ router.route("/bio").post((req,res)=>{
 
 
 
-router.route("/assessment").get((req,res)=>{
-
+router.route("/assessment").post((req,res)=>{
     let obj= req.body;
-    membersDB.findById("5ffa3cbe96dbba0a6c6b66a6")  //note in line
+
+    console.log(obj)
+    membersDB.findById(obj._id)  //note in line
     .then(datas => {
         let tep = datas.assessment
-        tep.push({"p":"3"})
-        console.log(tep)
-        membersDB.updateOne(obj.id,{"assessment":tep})
+        delete obj._id
+        tep.push(obj)
+        membersDB.updateOne(obj._id,{"assessment":tep})
         .then(doc => res.send(doc))
-        .catch(err => console.log("on updateing"+ err))
-        
+        .catch(err => console.log("on updateing"+ err))        
     })
     .catch(err => console.log("on finding:"+ err))
 })

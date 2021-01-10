@@ -39,8 +39,7 @@ export default function MemberInfo(){
         })
     }
 
-    function handleClick(id){
-        console.log(id)
+    function handleClick(id,root){
         history.push(`/admin/bio/${id}`)
     }
 
@@ -59,20 +58,21 @@ export default function MemberInfo(){
                     placeholder="Enter"/>
                 </div>
             </form>
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Card</th>
+                        <th>days</th>
                     </tr>
                 </thead>
                 <tbody>
                                     
                     { members.map(element => {
                             return<tr key={element.name} >
-                                    <td>{element.name}</td>
-                                    <td> <button onClick={() => handleClick(element._id)} className="btn btn-primary">Bio</button> </td>
-                                    <td> <button className="btn btn-success">Tack Assessment</button> </td>
-                                    <td> <button className="btn btn-secondary">Set Exercise</button> </td>
+                                    <td  onClick={() => handleClick(element._id,"bio")} >{element.name}</td>
+                                    <td>2</td>
+                                    <td>34</td>
                                </tr> 
                             }
                      )}
