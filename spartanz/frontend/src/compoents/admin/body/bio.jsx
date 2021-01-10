@@ -76,13 +76,13 @@ export default function Bio(){
                 </thead>
 
                 <tbody>
-                    {assessment.map(element =>
-                    <tr>
-                        <th>{element.pushUp}</th>
-                        <th>{element.curlUps}</th>
-                        <th>{element.squats}</th>
-                    </tr>
-                    )}
+                    {assessment.map( (element) =>{
+                        return <tr key={"as"+element.curlUps} >
+                            <th >{element.pushUp}</th>
+                            <th >{element.curlUps}</th>
+                            <th >{element.squats}</th>
+                        </tr>
+                    })}
 
                 </tbody>
             </table>

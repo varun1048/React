@@ -25,6 +25,8 @@ export default function MemberInfo(){
                 setMembers(datas.data)
             }
         })
+        .catch(err =>console.log("!on member info"))
+
     })
         
     
