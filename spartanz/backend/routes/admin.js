@@ -15,15 +15,15 @@ router.route("/bio").post((req,res)=>{
 
 router.route("/assessment").post((req,res)=>{
     let obj= req.body;
-
-    console.log(obj)
     membersDB.findById(obj._id)  //note in line
     .then(datas => {
         let tep = datas.assessment
+        let id =  obj._id
         delete obj._id
+        
         tep.push(obj)
-        membersDB.updateOne(obj._id,{"assessment":tep})
-        .then(doc => res.send(doc))
+        membersDB.updateOne({"_id":id},{"assessment":tep})
+        .then(doc => console.log("updated :"+id))
         .catch(err => console.log("on updateing"+ err))        
     })
     .catch(err => console.log("on finding:"+ err))

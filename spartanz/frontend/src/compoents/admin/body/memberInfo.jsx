@@ -9,7 +9,7 @@ export default function MemberInfo(){
     const history = useHistory()
 
     let [members,setMembers] = useState([])
-    
+
     let [finder,setFinder] = useState({
         name:""
     })
@@ -19,14 +19,20 @@ export default function MemberInfo(){
         axios.get("http://localhost:5000/admin/getAll")
         .then(datas =>{
             if(finder.name !== ''){
-                setMembers(datas.data.filter(str=>str.name.startsWith(finder.name)))
+                let names =datas.data.filter(str=>str.name.startsWith(finder.name))
+                    setMembers(names)
             }
             else{
                 setMembers(datas.data)
             }
+            
         })
         .catch(err =>console.log("!on member info"))
 
+        // return ()=>{
+        //     setMembers([])
+        //     setFinder(0)
+        // }
     })
         
     
@@ -39,19 +45,20 @@ export default function MemberInfo(){
                 [name]:value
             }
         })
+
     }
 
-    function handleClick(id,root){
+    function handleClick(id){
         history.push(`/admin/bio/${id}`)
     }
 
 
     
-    return    <div className="container ">
-     <div  className="row">
+    return    <div class="container ">
+     <div  class="row">
         <AdminLinks />
 
-        <div className="col-sm-9  ">
+        <div class="col-sm-9  ">
             <h2> <span class="badge badge-secondary">Members</span></h2>
             <form >
                 <div class="form-group">
@@ -72,7 +79,7 @@ export default function MemberInfo(){
                                     
                     { members.map(element => {
                             return<tr key={element.name} >
-                                    <td  onClick={() => handleClick(element._id,"bio")} >{element.name}</td>
+                                    <td  onClick={() => handleClick(element._id)} >{element.name}</td>
                                     <td>2</td>
                                     <td>34</td>
                                </tr> 

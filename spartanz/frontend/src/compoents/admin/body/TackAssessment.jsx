@@ -26,6 +26,7 @@ export default function TackAssessment(){
             }
         })
     }
+
     function handleClick(event){
         event.preventDefault();
         if(input.pushUp !== 0 && input.curlUps !== 0 && input.squats !== 0 ){
@@ -36,16 +37,16 @@ export default function TackAssessment(){
         } 
     }
 
-return    <div className="container">
-     <div  className="row">
+return    <div class="container">
+     <div  class="row">
         <AdminLinks />
-        <div className="col-lg-9 ">
+        <div class="col-lg-9 ">
         
         <h2>
             Assessment Test
         </h2> <br/>  
         
-        <form  className="">
+        <form  class="">
             <div class="input-group mb-3 " style={st}>
                 <div class="input-group-prepend" >
                     <span class="input-group-text ">Push Up</span>
@@ -56,7 +57,7 @@ return    <div className="container">
                 <div class="checkbox m-1">
                 <label  ><input type="checkbox" onChange={handleChange}
                     name="mfd" value="MDF" /> 
-                    <samp className="m-2"> MFD</samp> </label>
+                    <samp class="m-2"> MFD</samp> </label>
                 </div>
             </div>
 
@@ -80,7 +81,7 @@ return    <div className="container">
                 placeholder="Enter" aria-label="Username" aria-describedby="basic-addon1"/>
             </div>
             
-            <button type="submit" className="btn btn-primary"  onClick={handleClick}  > submit </button>
+            <button type="submit" class="btn btn-primary"  onClick={handleClick}  > submit </button>
         </form>
         </div>
     </div>

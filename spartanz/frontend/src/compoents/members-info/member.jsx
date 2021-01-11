@@ -12,7 +12,6 @@ const [notes, setNotes] = useState(0)
             setNotes( datas.data )
         })
         
-        // axios.post("http://localhost:5000/admin/live",{"id":notes})
     })
 
     return <div className="container">

@@ -1,3 +1,5 @@
+
+
 import { useEffect, useState } from "react";
 import axios from "axios"
 import {useParams} from 'react-router-dom'
@@ -8,7 +10,6 @@ import AdminLinks from "./adminLinks";
 export default function Bio(){
     const  Params = useParams()
     const history = useHistory()
-
     let     [info,setInfo]=useState(0)
     let     [assessment,setAssessment] = useState([])
     useEffect(()=>{
@@ -38,12 +39,12 @@ export default function Bio(){
     }
 
 
-    return    <div className="container-fluid">
-     <div  className="row">
+    return    <div class="container-fluid">
+     <div  class="row">
         <AdminLinks />
         <br/> 
-        <div className="m-2 col-lg-8 bg-light ">
-            <div className="d-flex justify-content-between ">
+        <div class="m-2 col-lg-8 bg-light ">
+            <div class="d-flex justify-content-between ">
                 <div>
                     Bio <br/>
                     Name: {info.name} <br/>
@@ -52,19 +53,19 @@ export default function Bio(){
                 
                 <div>
                     <button onClick={() => handleClick(info._id,"SetExercise")}
-                        className="btn btn-secondary m-2">
+                        class="btn btn-secondary m-2">
                         Set Exercise
                     </button> 
 
                     <button onClick={() => handleClick(info._id,"TackAssessment")}
-                    className="btn btn-success" >
+                    class="btn btn-success" >
                         Tack Assessment
                     </button> 
                 </div>
             </div>
             <br/>
 
-            <button className="btn btn-danger" data-toggle="collapse" data-target="#demo">Collapsible</button>
+            <button class="btn btn-danger" data-toggle="collapse" data-target="#demo">Collapsible</button>
             <div id="demo" class="collapse">
             <table class="table table-bordered">
                 <thead>
@@ -77,7 +78,7 @@ export default function Bio(){
 
                 <tbody>
                     {assessment.map( (element) =>{
-                        return <tr key={"as"+element.curlUps} >
+                        return <tr>
                             <th >{element.pushUp}</th>
                             <th >{element.curlUps}</th>
                             <th >{element.squats}</th>
