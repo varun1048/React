@@ -1,4 +1,4 @@
-export default function Fess(params) {
+export default function Fess() {
     return <div className="d-flex justify-content-center">
     <br/>
 

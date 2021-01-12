@@ -1,4 +1,4 @@
-import AdminLinks from "./body/adminLinks";
+import AdminLinks from "../body/adminLinks";
 
 export default function Main(){
     return<div className="container">

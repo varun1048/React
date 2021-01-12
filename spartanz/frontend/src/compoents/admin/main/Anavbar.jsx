@@ -3,7 +3,8 @@ import axios from "axios"
 import {  useState ,useEffect } from 'react'
 import {Link } from 'react-router-dom'
 
-import "./style/Anavbar.css"
+import "../style/Anavbar.css"
+
 
 
 export default function Anavbar(params) {
@@ -49,8 +50,6 @@ export default function Anavbar(params) {
             </Link>
         </li>
     </ul>
-    
-
 </nav>
 
 }

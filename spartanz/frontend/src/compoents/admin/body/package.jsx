@@ -1,4 +1,4 @@
-import Fess from "../../body/fees";
+import Fess from "../../membersF/body/fees";
 import AdminLinks from "./adminLinks";
 
 export default function Package(){

@@ -1,9 +1,9 @@
 import {BrowserRouter as Router , Route} from 'react-router-dom'
 
-import Main from "./compoents/admin/main";
-import Anavbar from "./compoents/admin/Anavbar";
-import Join from './compoents/admin/join'
-import LiveMembers from './compoents/admin/liveMembers'
+import Main from "./compoents/admin/main/main";
+import Anavbar from "./compoents/admin/main/Anavbar";
+import Join from './compoents/admin/main/join'
+import LiveMembers from './compoents/admin/main/liveMembers'
 
 import Package from "./compoents/admin/body/package"
 import MemberInfo from './compoents/admin/body/memberInfo';

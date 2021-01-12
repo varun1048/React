@@ -1,23 +1,23 @@
 import {BrowserRouter as Router , Route, Switch} from 'react-router-dom'
 
-import Navbar from "./compoents/main/navbar"
-import MainBody from './compoents/main/mainBody'
-import Register  from "./compoents/members-info/register "
-import Member from "./compoents/members-info/member.jsx"
-import Members from './compoents/members-info/members.jsx'
+import Navbar from      "./compoents/membersF/main/navbar"
+import MainBody from    './compoents/membersF/main/mainBody'
+
+import Register  from   "./compoents/membersF/members-info/register "
+import Member from      "./compoents/membersF/members-info/member.jsx"
+import Members from     './compoents/membersF/members-info/members.jsx'
 
 
 
 
-export default function App() {
+export default function MembersRouters() {
 
     return <div>
            <Router >
 
             <Switch>
-           
-
-               <Route exact path="/" >
+                           
+              <Route exact path="/" >
                     <Navbar />
                     <MainBody />
                 </Route>

@@ -1,4 +1,3 @@
-import Fees from "../body/fees"
 
 export default function Register (params) {
   return <div className="container">
@@ -15,8 +14,6 @@ export default function Register (params) {
       </h3>
     </div>
 
-    <Fees />
- 
-    
+   
   </div>
 }

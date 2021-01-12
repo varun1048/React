@@ -6,7 +6,9 @@ import {useParams} from 'react-router-dom'
 export default function Member(){
 const  Params = useParams()
 const [notes, setNotes] = useState(0)
-    useEffect(()=>{
+    
+
+useEffect(()=>{
         axios.post("http://localhost:5000/members/profile",{"number":Params.id})
         .then((datas)=>{
             setNotes( datas.data )
