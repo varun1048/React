@@ -1,4 +1,3 @@
-
 export default function Register (params) {
   return <div className="container">
     <br/><br/>

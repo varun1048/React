@@ -14,9 +14,8 @@ export default function MembersRouters() {
 
     return <div>
            <Router >
-
             <Switch>
-                           
+
               <Route exact path="/" >
                     <Navbar />
                     <MainBody />

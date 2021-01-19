@@ -39,16 +39,16 @@ export default function Join(){
     return <React.Fragment> <br/>
         <div   className="d-flex justify-content-center "> 
             <div className="card bg-light" style={st}>
-                <div class="card-body">
+                <div className="card-body">
 
                     <form>
                         
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="usr">Full Name</label>
                             <input type="text"  className="form-control" onChange={handleChange}
                             placeholder="Enter Name" name="name"/>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
 
                             <label for="usr">Mobile Number</label>
                             <input type="number"  className="form-control" onChange={handleChange}
@@ -56,7 +56,7 @@ export default function Join(){
                         </div>
                         
 
-                            <button type="submit" class="btn btn-dark" onClick={handleClick}  >Submit</button>
+                            <button type="submit" className="btn btn-dark" onClick={handleClick}  >Submit</button>
                     </form>
 
                 </div>

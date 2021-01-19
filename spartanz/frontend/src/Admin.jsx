@@ -45,7 +45,7 @@ return <Router>
         <Bio />
     </Route>
 
-    <Route path="/admin/SetExercise"> 
+    <Route path="/admin/SetExercise/:id"> 
         <Anavbar /> 
         <SetExercise />
     </Route>

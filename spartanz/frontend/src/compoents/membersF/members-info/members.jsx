@@ -41,18 +41,18 @@ export default function Members() {
         <br/>
         <div   className="d-flex justify-content-center"> 
             <div className="card" style={st}>
-                <div class="card-body">
+                <div className="card-body">
 
                     <form>
                         
-                        <div class="form-group">
+                        <div className="form-group">
                         
-                            <label for="usr">Number</label>
+                            <label htmlFor="usr">Number</label>
                             <input type="number" className="form-control" onChange={handleChange}
                             placeholder="Enter your mobile number" name="userNumber"/>
                         
                         </div>
-                            <button type="submit" class="btn btn-primary" onClick={handleClick}  >Submit</button>
+                            <button type="submit" className="btn btn-primary" onClick={handleClick}  >Submit</button>
                     </form>
 
                 </div>

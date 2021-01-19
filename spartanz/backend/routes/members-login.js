@@ -12,25 +12,25 @@ router.route("/save").post((req,res) =>{
     })
    
     data.save()
-    .then((ress)=>res.send(ress))   
+    .then((ress)=>res.json(ress))   
 })
 
 let member =  new Array()
 router.route('/profile').post((req,res)=>{
     membersDB.findOne({"number":String(req.body.number)})
     .then(datas=>{
-        res.send(datas)
+        res.json(datas)
         if(!member.includes(datas.name)){   
             member.push( datas.name)
         }
     })
     .catch((err)=>{
-        res.send(err)
+        res.json(err)
     })
 })
 
 router.route('/live').get((req,res)=>{
-    res.send(member)
+    res.json(member)
 })
 member = []
 

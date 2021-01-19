@@ -3,7 +3,8 @@ const mongoose = require("mongoose")
 const  schema = mongoose.Schema ({
     name:String,
     number:Number,
-    assessment:[Object]
+    assessment:[Object],
+    workout:Object
 
 })
 

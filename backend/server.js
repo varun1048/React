@@ -1,3 +1,4 @@
+console.clear()
 const exp = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")

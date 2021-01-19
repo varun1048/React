@@ -1,11 +1,11 @@
 import {Link } from 'react-router-dom'
 
 export default function Navbar(params) {
-    return <nav class="navbar navbar-expand-sm bg-dark d-flex justify-content-between">
+    return <nav className="navbar navbar-expand-sm bg-dark d-flex justify-content-between">
 
-    <ul class="navbar-nav   ">
+    <ul className="navbar-nav   ">
 
-            <li class="nav-item">
+            <li className="nav-item">
                 <Link to="/" className="nav-item nav-link active">
                     SPARTANZ            
                 </Link>
@@ -13,8 +13,8 @@ export default function Navbar(params) {
         
     </ul>
 
-    <ul class="navbar-nav  d-flex ">
-        <li class="nav-item" >
+    <ul className="navbar-nav  d-flex ">
+        <li className="nav-item" >
             <Link to="/register" className="nav-item nav-link ">
                 Join now
             </Link>

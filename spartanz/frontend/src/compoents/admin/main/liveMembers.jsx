@@ -10,22 +10,21 @@ export default function LiveMembers(){
             setMembers(datas.data)
         })
     })
-    // console.log(members.length)
     
     return  <div className="container">
         
-        <h1> <span class="badge badge-secondary">Members</span></h1>
-        <table class="table table-striped">
+        <h1> <span className="badge badge-secondary">Members</span></h1>
+        <table className="table table-striped">
             <thead>
                 <tr>
                     <th>Name</th>
                 </tr>
             </thead>
             <tbody>
-                {members.map(element => <tr>
-                    <td key={element} > {element} </td>
+                {members.map( (element ,i) => <tr>
+                    <td key={ ( i  ).toString() } > {element} </td>
                     <td>
-                        <button key={element}  className="btn btn-warning">Done</button>
+                        <button   className="btn btn-warning">Done</button>
                     </td>
                 </tr> )}
             </tbody>

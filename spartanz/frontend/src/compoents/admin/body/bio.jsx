@@ -1,19 +1,18 @@
-
-
-import { useEffect, useState } from "react";
 import axios from "axios"
-import {useParams} from 'react-router-dom'
-import {useHistory} from 'react-router-dom'
+import { useEffect, useState } from "react";
+import {useHistory,useParams} from 'react-router-dom'
 
 import AdminLinks from "./adminLinks";
 
 export default function Bio(){
+
     const  Params = useParams()
     const history = useHistory()
     let     [info,setInfo]=useState(0)
     let     [assessment,setAssessment] = useState([])
+    
     useEffect(()=>{
-        axios.post("http://localhost:5000/admin/bio",{"id":Params.id})
+        axios.post("http://localhost:5000/admin/bio",{"id": Params.id})
         .then(datas => {
             setInfo(datas.data)
             setAssessment(datas.data.assessment)
@@ -21,7 +20,6 @@ export default function Bio(){
         .catch(err => console.log(err) )
     })
     function handleClick(id,root){
-        console.log(id)
         switch (root) {
             case "bio":
                 history.push(`/admin/bio/${id}`)
@@ -29,7 +27,6 @@ export default function Bio(){
             case "TackAssessment":
                 history.push(`/admin/TackAssessment/${id}`)
                 break;
-
             case "SetExercise":
                 history.push(`/admin/SetExercise/${id}`)
                 break;
@@ -39,12 +36,12 @@ export default function Bio(){
     }
 
 
-    return    <div class="container-fluid">
-     <div  class="row">
+    return    <div className="container-fluid">
+     <div  className="row">
         <AdminLinks />
         <br/> 
-        <div class="m-2 col-lg-8 bg-light ">
-            <div class="d-flex justify-content-between ">
+        <div className="m-2 col-lg-8 bg-light ">
+            <div className="d-flex justify-content-between ">
                 <div>
                     Bio <br/>
                     Name: {info.name} <br/>
@@ -53,21 +50,21 @@ export default function Bio(){
                 
                 <div>
                     <button onClick={() => handleClick(info._id,"SetExercise")}
-                        class="btn btn-secondary m-2">
+                        className="btn btn-secondary m-2">
                         Set Exercise
                     </button> 
 
                     <button onClick={() => handleClick(info._id,"TackAssessment")}
-                    class="btn btn-success" >
+                    className="btn btn-success" >
                         Tack Assessment
                     </button> 
                 </div>
             </div>
             <br/>
 
-            <button class="btn btn-danger" data-toggle="collapse" data-target="#demo">Collapsible</button>
-            <div id="demo" class="collapse">
-            <table class="table table-bordered">
+            <button className="btn btn-danger" data-toggle="collapse" data-target="#demo">Assessment</button>
+            <div id="demo" className="collapse">
+            <table className="table table-bordered">
                 <thead>
                 <tr>
                     <th>Push up</th>
@@ -77,8 +74,8 @@ export default function Bio(){
                 </thead>
 
                 <tbody>
-                    {assessment.map( (element) =>{
-                        return <tr>
+                    {assessment.map( (element ,i) =>{
+                        return <tr key={  ( i  ).toString() } >
                             <th >{element.pushUp}</th>
                             <th >{element.curlUps}</th>
                             <th >{element.squats}</th>

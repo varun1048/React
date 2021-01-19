@@ -1,8 +1,6 @@
 import axios from "axios"
 import React,{ useEffect ,useState } from "react"
 import {useHistory} from 'react-router-dom'
-
-
 import AdminLinks from "./adminLinks";
 
 export default function MemberInfo(){
@@ -27,12 +25,8 @@ export default function MemberInfo(){
             }
             
         })
-        .catch(err =>console.log("!on member info"))
+        .catch(err =>console.log("!on member info" +err))
 
-        // return ()=>{
-        //     setMembers([])
-        //     setFinder(0)
-        // }
     })
         
     
@@ -48,26 +42,24 @@ export default function MemberInfo(){
 
     }
 
-    function handleClick(id){
-        history.push(`/admin/bio/${id}`)
-    }
+
 
 
     
-    return    <div class="container ">
-     <div  class="row">
+    return    <div className="container ">
+     <div  className="row">
         <AdminLinks />
 
-        <div class="col-sm-9  ">
-            <h2> <span class="badge badge-secondary">Members</span></h2>
+        <div className="col-sm-9  ">
+            <h2> <span className="badge badge-secondary">Members</span></h2>
             <form >
-                <div class="form-group">
-                    <label for="usr">Name  </label>
-                    <input type="text" class="form-control" name="name" onChange={handleChange}
+                <div className="form-group">
+                    <label htmlFor="usr">Name  </label>
+                    <input type="text" className="form-control" name="name" onChange={handleChange}
                     placeholder="Enter"/>
                 </div>
             </form>
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -79,7 +71,7 @@ export default function MemberInfo(){
                                     
                     { members.map(element => {
                             return<tr key={element.name} >
-                                    <td  onClick={() => handleClick(element._id)} >{element.name}</td>
+                                    <td  onClick={() => history.push(`/admin/bio/${element._id}`)} >{element.name}</td>
                                     <td>2</td>
                                     <td>34</td>
                                </tr> 
@@ -91,22 +83,4 @@ export default function MemberInfo(){
     </div>
 </div>
 }
-
-
-
-
-
-
-
-
-
-    //     {
-        //     if(finder.name !== ''){
-        //         // console.log("va")
-        //         setMembers(datas.data.filter(str=>str.name.startsWith(finder.name)))
-        //         // setMembers(datas.data)
-        //     }
-        //     else{
-            
-        //     }
-        // })
+    
