@@ -3,6 +3,7 @@ import {  useState,useEffect } from "react";
 import AdminLinks from "./adminLinks";
 import {useParams ,useHistory} from 'react-router-dom'
 
+let L = (inner)=>console.log(inner)
 export default function SetExercise(){
 
     let     [info,setInfo]=useState(0)
@@ -54,9 +55,11 @@ export default function SetExercise(){
         setExercises(Hub)
         setInput(0)
     }
-
     function handleClick(){
+        
         if(Exercises.length !== 0 && Exercises.length !== 1   ){
+            
+            L("varim")
             axios.post("http://localhost:5000/admin/SetExerciseDB",
                 { gymWorkout: Exercises,
                   id: Params.id

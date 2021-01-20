@@ -1,3 +1,5 @@
+let L = (inner)=>console.log(inner)
+
 const express = require("express")
 const router = express.Router()
 const membersDB = require("../models/mongoModels")
@@ -29,6 +31,17 @@ router.route("/assessment").post((req,res)=>{
     .catch(err => console.log("on finding:"+ err))
 })
 
+router.route('/SetExerciseDB').post((req,res)=>{
+    let obj = req.body
+    membersDB.findById(obj.id)  //note in line
+    .then(datas => {
+        membersDB.updateOne({"_id":obj.id},{"workout":obj.gymWorkout})
+        .then(res.json("assessment updated"))
+        .catch(err => console.log("Error updateing"+ err))        
+    })
+    .catch(err => console.log("on finding SetExerciseDB :"+ err))
+})
+
 router.route('/SetExerciseInfo').post((req,res)=>{
     membersDB.findOne({"_id":String(req.body.id)})
     .then(datas =>{
@@ -41,13 +54,5 @@ router.route('/SetExerciseInfo').post((req,res)=>{
     .catch(err => console.log("on set ExerciseInfo:"+err ))
 })
 
-router.route('/SetExerciseDB').post((req,res)=>{
-    let obj = req.body
-    membersDB.findByIdAndUpdate(obj.id,{"workout":obj.workout})
-    .then((doc)=>{
-        console.log(d)
-        res.send("")})
-    .catch(err => console.log("on SetExerciseDB:"+ err))
-})
 
 module.exports = router

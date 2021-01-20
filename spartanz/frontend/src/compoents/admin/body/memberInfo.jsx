@@ -59,12 +59,12 @@ export default function MemberInfo(){
                     placeholder="Enter"/>
                 </div>
             </form>
-            <table className="table table-hover">
+            <table className="table table-hover table-dark">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Card</th>
-                        <th>days</th>
+                        <th>Card Number</th>
+                        <th>Days more</th>
                     </tr>
                 </thead>
                 <tbody>
