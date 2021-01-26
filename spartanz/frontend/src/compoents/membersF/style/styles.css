@@ -1,0 +1,27 @@
+.mainPageNavbar{
+    background-color:black;
+    height: auto;
+   
+}
+.mainBody{
+    background-color:red;
+
+}
+.carousel-inner .img {
+    width: 900px;
+    height: 300px;
+  }
+.Footer{
+    margin-top:  150px;
+    padding: 10px;
+}
+.social-logos{
+    width: 75px;
+}
+.bgBlack{
+    background-color: black;
+
+}
+.footerEnd{
+    background-color: rgba(0, 0, 0, 0.2)
+}

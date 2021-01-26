@@ -14,6 +14,11 @@ export default function AdminLinks(){
         <li className="nav-item">
             <Link className="nav-link" to="/admin/ExpredPackage">Expred Package</Link>
         </li>
+
+        <li className="nav-item">
+            <Link className="nav-link" to="/admin/Enquiry">Enquiry</Link>
+        </li>
+        
     </ul>
  </div>
 }

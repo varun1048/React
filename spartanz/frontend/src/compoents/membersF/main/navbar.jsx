@@ -1,27 +1,28 @@
 import {Link } from 'react-router-dom'
-
 export default function Navbar(params) {
-    return <nav className="navbar navbar-expand-sm bg-dark d-flex justify-content-between">
+    let logo = "https://i.pinimg.com/originals/5a/26/d6/5a26d67018bd284dd97ae0d0e2390b88.jpg"
 
-    <ul className="navbar-nav   ">
+    return <nav className="navbar    mainPageNavbar d-flex justify-content-between ">
+    
+    <ul className="navbar-nav ">
 
-            <li className="nav-item">
-                <Link to="/" className="nav-item nav-link active">
-                    SPARTANZ            
+            <li className=" navbar-item  ">
+                <Link to="/" className="nav-item nav-link  active">
+                    <span>
+                    SPARTANZ <small>Fitness</small>
+                    </span>
                 </Link>
+
             </li>
         
     </ul>
-
-    <ul className="navbar-nav  d-flex ">
-        <li className="nav-item" >
-            <Link to="/register" className="nav-item nav-link ">
-                Join now
-            </Link>
+        <li className=" navbar-brand ">
+            <img src={logo} className="rounded-circle " alt="logo" width="50" height="50"/> 
         </li>
 
-        <li className="nav-item ">
-            <Link to="/members/"  className="nav-item nav-link ">
+    <ul className="navbar-nav  d-flex ">
+          <li className="nav-item ">
+            <Link to="/members/"  className="nav-item   nav-link ">
                 Members
             </Link>
         </li>

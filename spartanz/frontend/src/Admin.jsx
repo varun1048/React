@@ -11,6 +11,7 @@ import SetExercise from './compoents/admin/body/SetExercise';
 import TackAssessment from './compoents/admin/body/TackAssessment';
 import ExpredPackage from './compoents/admin/body/ExpredPackage';
 import Bio from './compoents/admin/body/bio';
+import Enquiry from './compoents/admin/body/Enquiry';
 
 export default function Admin() {
 return <Router>
@@ -58,5 +59,11 @@ return <Router>
         <Anavbar /> 
         <ExpredPackage />
     </Route>
+
+    <Route path="/admin/Enquiry"> 
+        <Anavbar /> 
+        <Enquiry />
+    </Route>
+
 </Router>
 }

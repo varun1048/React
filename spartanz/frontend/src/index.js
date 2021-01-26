@@ -5,8 +5,8 @@ import MembersRouters from './MembersRouters';
 import Admin from './Admin.jsx';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MembersRouters />    
+  <React.StrictMode >
+    <MembersRouters  className="bg-dark"  />    
     <Admin />
   </React.StrictMode>,
   document.getElementById('root')

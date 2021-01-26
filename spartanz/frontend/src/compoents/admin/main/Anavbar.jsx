@@ -52,6 +52,7 @@ export default function Anavbar(params) {
             </Link>
         </li>
     </ul>
+
 </nav>
 
 }

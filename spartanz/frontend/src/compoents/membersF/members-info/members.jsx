@@ -41,11 +41,11 @@ export default function Members() {
         <br/>
         <div   className="d-flex justify-content-center"> 
             <div className="card" style={st}>
-                <div className="card-body">
+                <div className="card-body bg-light">
 
                     <form>
                         
-                        <div className="form-group">
+                        <div className="form-group ">
                         
                             <label htmlFor="usr">Number</label>
                             <input type="number" className="form-control" onChange={handleChange}
