@@ -1,7 +1,6 @@
 
 import AboutUs from "../body/AboutUs";
 import Carousel from "../body/Carousel";
-import ContactUs from "../body/ContactUs";
 import WhyJoin from "../body/WhyJoin"
 
 export default function MainBody() {
@@ -16,16 +15,11 @@ export default function MainBody() {
         
         <div class="row ">
             <div class="col-sm" >
-            <WhyJoin />
+                <WhyJoin />
             </div>
         </div>
 
-        <div class="row ">
-            <div class="col-sm" >
-            <ContactUs />
-            </div>
-        </div>
-
+ 
         <div class="row ">
             <div class="col-sm" >
             <AboutUs />

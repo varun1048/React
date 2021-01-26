@@ -1,3 +1,4 @@
+import {Link } from 'react-router-dom'
 
 export default function Footer(){
     let logos={
@@ -22,7 +23,9 @@ export default function Footer(){
         </p>
       </div>
       <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <Link to="/ContactUs">
         <h5 className="text-uppercase">CONTACT US</h5>
+        </Link>
 
         <ul className="list-unstyled mb-0">
           <li>

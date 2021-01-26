@@ -21,13 +21,14 @@ export default function Navbar(params) {
         </li>
 
     <ul className="navbar-nav  d-flex ">
-          <li className="nav-item ">
+        
+        <li className="nav-item ">
             <Link to="/members/"  className="nav-item   nav-link ">
                 Members
             </Link>
+            
         </li>
     
-
     </ul>
 </nav>
 

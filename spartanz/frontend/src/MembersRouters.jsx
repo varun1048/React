@@ -7,10 +7,10 @@ import Register  from   "./compoents/membersF/members-info/register "
 import Member from      "./compoents/membersF/members-info/member.jsx"
 import Members from     './compoents/membersF/members-info/members.jsx'
 import Footer from './compoents/membersF/main/Footer'
-import WhyJoin from './compoents/membersF/body/WhyJoin'
 
 import "./compoents/membersF/style/styles.css"
 import "./compoents/membersF/style/imgs.css"
+import ContactUs from './compoents/membersF/body/ContactUs'
 
 
 export default function MembersRouters() {
@@ -45,9 +45,9 @@ export default function MembersRouters() {
                     <Footer />                
                 </Route>
 
-                <Route  path="/WhyJoin" >
+                <Route  path="/ContactUs" >
                     <Navbar />
-                        <WhyJoin />
+                        <ContactUs />
                     <Footer />                
                 </Route>
             </Switch>
