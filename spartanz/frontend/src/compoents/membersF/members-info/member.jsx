@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import {useParams} from 'react-router-dom'
 
 import Exercise from "./content/Exercise"
+import Timer from "./content/Timer"
 
 export default function Member(){
     let Proimage="https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-512.png"
@@ -10,7 +11,7 @@ export default function Member(){
 const  Params = useParams()
 const [notes, setNotes] = useState(0)
 
-let st={"width":"10"}
+let st={"width":"200"}
 useEffect(()=>{
         axios.post("http://localhost:5000/members/profile",{"number":Params.id})
         .then((datas)=>{
@@ -18,23 +19,39 @@ useEffect(()=>{
         })
         
     })
+    return <div className="m-5">
 
-    return <div className="container">
+        <div className="row">
+            
+            <div className="col-sm">
+                <div className="card bg-light " style={st} >
+                    
+                    <img className="card-img-top" src={Proimage} alt="Cardimage"  />
 
-
-        <div class="card" style="width:400px">
-            <img class="card-img-top" src={Proimage} alt="Cardimage" style={st} />
-            <div class="card-body">
-            <h4 class="card-title"> {notes.name}</h4>
-            <p class="card-text">
-                your Number:{notes.number}
-            </p>
-            {/* <a href="#" class="btn btn-primary">See Profile</a> */}
+                    <div className="card-body">
+                    <h4 className="card-title"> {notes.name}</h4>
+                    <p className="card-text">
+                        your Number:{notes.number}
+                    </p>
+                    {/* <a href="#" className="btn btn-primary">See Profile</a> */}
+                    </div>
+                </div>
             </div>
+ 
+            <div className="col-8">
+                <h3>
+                    Today Exercise
+                </h3>
+
+                    <Exercise />
+            </div>
+
+            <div className="col">
+                <Timer />
+            </div>
+
         </div>
-    <button type="button" className="btn btn-primary" data-toggle="collapse" data-target="#demo">Today Exercise</button>
-    <div id="demo" className="collapse">    
-        <Exercise />
-    </div>
+        <div className="row">
+        </div>
     </div>
 }

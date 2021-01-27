@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom'
 
 
 export default function Exercise(pros){
+
     const [workout,setWorkout] = useState([])
     const  Params = useParams()
 
@@ -13,13 +14,10 @@ export default function Exercise(pros){
         .then((datas)=>{
             setWorkout( datas.data.workout )
         })
-        
     })
 
-
-    
-    return <table className="table">
-    <thead>
+    return <table className="table table-striped table-bordered ">
+    <thead className=" ">
         <tr>
             <th>Exercise</th>
             <th>Sets</th>
@@ -36,8 +34,8 @@ export default function Exercise(pros){
                     <td >{element.Reps}</td>
                     <td >{element.Weight} Kg  </td>
                 </tr>
-            })}
-        </tbody>
+               })}
 
+        </tbody>
 </table>
 }
