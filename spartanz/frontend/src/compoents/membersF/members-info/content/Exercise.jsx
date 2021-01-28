@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom'
 
 
 
-export default function Exercise(pros){
+export default function    Exercise(){
 
     const [workout,setWorkout] = useState([])
     const  Params = useParams()
