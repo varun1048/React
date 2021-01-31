@@ -24,6 +24,7 @@ export default function Bio(){
         })
         .catch(err => console.log(err) )
     })
+    
     function handleClick(id,root){
         switch (root) {
             case "bio":
@@ -46,7 +47,7 @@ export default function Bio(){
         <AdminLinks />
         <br/> 
 
-        <div className="m-2 col-lg-8 bg-light fullblack ">
+        <div className="m-2 col-lg-8 bg-light  ">
 {/*    */}
             <div className="row d-flex justify-content-between ">
 

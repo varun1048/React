@@ -5,9 +5,9 @@ import {useHistory} from 'react-router-dom'
 export default function Join(){
     const history = useHistory()
 
-    let st={
-        "width":"400px"
-    }
+    // let st={
+    //     "width":"400px"
+    // }
         let [input,setInput] = useState(0)
 
         
@@ -37,30 +37,41 @@ export default function Join(){
 
 
     return <React.Fragment> <br/>
-        <div   className="d-flex justify-content-center "> 
-            <div className="card bg-light" style={st}>
-                <div className="card-body">
+        <div   className="container"> 
+            
+            <form>
+                <div className="row">
 
-                    <form>
-                        
-                        <div className="form-group">
-                            <label for="usr">Full Name</label>
-                            <input type="text"  className="form-control" onChange={handleChange}
-                            placeholder="Enter Name" name="name"/>
-                        </div>
-                        <div className="form-group">
+                    <div className="form-group col-sm-4">
+                        <label for="usr">Full Name</label>
+                        <input type="text"  className="form-control" onChange={handleChange}
+                        placeholder="Enter Name" name="name"/>
+                    </div>
 
-                            <label for="usr">Mobile Number</label>
-                            <input type="number"  className="form-control" onChange={handleChange}
-                            placeholder="Enter number" name="number"/>
-                        </div>
-                        
-
-                            <button type="submit" className="btn btn-dark" onClick={handleClick}  >Submit</button>
-                    </form>
+                    <div className="form-group col-3">
+                        <label for="usr">Mobile Number</label>
+                        <input type="number"  className="form-control"  onChange={handleChange}
+                        placeholder="Enter number" name="number"/>
+                    </div>
 
                 </div>
+
+                <div className="row">
+
+                    <div className="form-group col-xs-1">
+                        <label for="usr">Age</label>
+                        <input type="text"  className="form-control" maxlength={2} onChange={handleChange}
+                        placeholder="Enter Name" name="age"/>
+                    </div>
+
             </div>
+
+                <div className="row">
+                    <button type="submit" className="btn btn-dark" onClick={handleClick}  >Submit</button>
+                </div>
+            </form>
+
         </div>
+        
     </React.Fragment>
 }

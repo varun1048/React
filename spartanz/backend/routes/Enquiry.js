@@ -13,6 +13,12 @@ router.route("/").get((req,res) =>{
     .catch(err => console.log(err))
 })
 
+let liveMember = []
+router.route("/live").get( (req,res) =>{
+    liveMember.push({"name":req.body.name,"id":req.body.id})
+    res.send("vARUH")
+})
+
 
 
 
