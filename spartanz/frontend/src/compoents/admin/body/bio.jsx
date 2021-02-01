@@ -8,14 +8,14 @@ export default function Bio(){
 
     const  Params = useParams()
     const history = useHistory()
-
-    let     [info,setInfo]=useState(0)
-    let     [assessment,setAssessment] = useState([])
+    
+    let     [info,setInfo]=useState(0) 
+    let     [assessment,setAssessment] =   useState([])
     let     [workout,setWorkout] = useState([])
 
     let Proimage="https://i.pinimg.com/originals/e1/e9/01/e1e90178d0143043c9084711f3b9e68c.jpg"
     
-    useEffect(()=>{
+     useEffect(()=>{
         axios.post("http://localhost:5000/admin/bio",{"id": Params.id})
         .then(datas => {
             setInfo(datas.data)

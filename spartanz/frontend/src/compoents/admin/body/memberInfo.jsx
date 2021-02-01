@@ -1,10 +1,9 @@
 import axios from "axios"
 import React,{ useEffect ,useState } from "react"
-import {useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import AdminLinks from "./adminLinks";
 
 export default function MemberInfo(){
-    const history = useHistory()
 
     let [members,setMembers] = useState([])
 
@@ -68,10 +67,15 @@ export default function MemberInfo(){
                     </tr>
                 </thead>
                 <tbody>
-                                    
-                    { members.map(element => {
-                            return<tr key={element.name} >
-                                    <td  onClick={() => history.push(`/admin/bio/${element._id}`)} >{element.name}</td>
+                
+                        
+                    { members.map( (element , i) => {
+                        return<tr key={i} >
+                                    <td   >
+                                    <Link to={`/admin/bio/${element._id}`}>
+                                        {element.name}
+                                    </Link>
+                                    </td>
                                     <td>2</td>
                                     <td>34</td>
                                </tr> 

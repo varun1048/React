@@ -1,18 +1,19 @@
 const express = require("express")
 const router = express.Router()
 const membersDB = require("../models/mongoModels")
-
+let L = inner =>console.log(inner)
 router.route("/save").post((req,res) =>{
 
     let name= req.body.info.name
     let number =  req.body.info.number
-    let data = new membersDB({
-        name,   
-        number,
-    })
+    L(req.body.info)
+    // let data = new membersDB({
+    //     name,   
+    //     number,
+    // })
    
-    data.save()
-    .then((ress)=>res.json(ress))   
+    // data.save()
+    // .then((ress)=>res.json(ress))   
 })
 
 let member =  new Array()
@@ -38,6 +39,17 @@ member = []
 
 
 module.exports = router
+
+let now  = new Date()
+let Expiry  = new Date()
+let package = 3
+Expiry.setMonth(4)
+
+L( Expiry.toLocaleDateString())
+
+
+
+
 
 
 
