@@ -27,7 +27,7 @@ export default function SetExercise(){
         Reps:"-",
         Weight:"-"
     }])
-
+//suma
  useEffect(()=>{
     axios.post("http://localhost:5000/admin/SetExerciseInfo",{"id": Params.id})
     .then(datas => {
