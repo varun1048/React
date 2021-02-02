@@ -4,11 +4,8 @@ import {useHistory} from 'react-router-dom'
 
 export default function Join(){
     const history = useHistory()
-    let L = inner =>console.log(inner)
-    let [date,setdate] = useState({
-        joing:Date(),
-        expiry:Date()
-    })
+    // let L = inner =>console.log(inner)
+ 
     let [input,setInput] = useState(0)
 
         
@@ -18,27 +15,13 @@ export default function Join(){
         setInput(prevInput =>{
             return {
                 ...prevInput,
-                [name]:value
+                [name]:value    
             }
         })
     }
-    function handleChangeD(event){
-        
-        const {name,value} = event.target 
-        setInput(prevInput =>{
-            return {
-                ...prevInput,
-                [name]:value
-            }
-        })
-    }
-
 
     function handleClick(event){
         event.preventDefault();
-        date.expiry=input.package
-        let d  = new Date("2015-1-25")
-        L(  input)
         // L(input)
 
         
@@ -112,7 +95,7 @@ export default function Join(){
                     <div className="input-group">
 
                         <span className="input-group-addon m-1">Gmail </span>
-                        <input id="email" type="mail" className="form-control" name="gmail"
+                        <input id="email" type="mail" className="form-control" name="gmail" onChange={handleChange}
                          placeholder="Enter Gmail"/>
                     </div>
                 </div>
@@ -121,7 +104,7 @@ export default function Join(){
                     <div className="form-check ">
 
                         <span className="input-group-addon ">In Specific:</span>
-                        <select className="form-select " aria-label="Default select example" name="specific" onChange={handleChange}>
+                        <select className="form-select " ari    a-label="Default select example" name="specific" onChange={handleChange}>
                             <option value="Weight Loss"> Weight Loss       </option>
                             <option value="Weight Gain"> Weight Gain       </option>
                             <option value="Overall Toning"> Overall Toning    </option>
@@ -146,18 +129,23 @@ export default function Join(){
                     <span className="input-group-addon  m-1 ">Package type  </span>
                 
                     <select className="form-select " aria-label="Default select example"
-                     name="package" onChange={handleChangeD}>
-                            <option value="Monthly">Monthly</option>
-                            <option value="Quartely">Quartely</option>
-                            <option value="Half yearly">Half yearly</option>
-                            <option value="Annual">	Annual</option>
+                     name="package" onChange={handleChange}>
+                            <option ></option>
+                            <option value="2">Monthly</option>
+                            <option value="4">Quartely</option>
+                            <option value="7">Half yearly</option>
+                            <option value="13">	Annual</option>
                     </select>
                 </div>
 
                     <div className="col-sm-4">                   
-                        <div>Joing date <span className="badge badge-info">{date.joing.slice(0,15)}</span></div>
-                        <div>Expiry date <span className="badge badge-danger">{date.expiry}</span></div>
- 
+                        
+                        <div className="input-group">
+                            <span className="input-group-addon m-2">Image Url</span>
+                            <input id="email" type="text" className="form-control " name="imgUrl" onChange={handleChange}
+                            placeholder="Enter image URL"/>
+                        </div>
+
                     </div>
             </div>
 

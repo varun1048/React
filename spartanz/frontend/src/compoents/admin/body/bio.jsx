@@ -13,7 +13,6 @@ export default function Bio(){
     let     [assessment,setAssessment] =   useState([])
     let     [workout,setWorkout] = useState([])
 
-    let Proimage="https://i.pinimg.com/originals/e1/e9/01/e1e90178d0143043c9084711f3b9e68c.jpg"
     
      useEffect(()=>{
         axios.post("http://localhost:5000/admin/bio",{"id": Params.id})
@@ -78,7 +77,7 @@ export default function Bio(){
                     <div className="col-sm">
                         <div className="card bg-light " style={st} >
                             
-                            <img className="card-img-top" src={Proimage} alt="Cardimage"  />
+                            <img className="card-img-top" src={info.imgUrl} alt="ErrorImage"  />
 
                             <div className="card-body">
                             <h4 className="card-title text-center"> {info.name}</h4>
@@ -94,7 +93,7 @@ export default function Bio(){
                 <div>
                 <div className="btn-group-vertical">
 
-                    <button className="btn btn-info m-1"> Package details  </button>
+                    <button className="btn btn-info m-1"> Update Package  </button>
 
                     <button onClick={() => handleClick(info._id,"SetExercise")}
                         className="btn btn-success m-1">

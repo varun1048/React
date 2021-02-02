@@ -3,17 +3,36 @@ const router = express.Router()
 const membersDB = require("../models/mongoModels")
 let L = inner =>console.log(inner)
 router.route("/save").post((req,res) =>{
+    let date  = new Date()
+    
+    let name        = req.body.info.Name
+    let number      =  req.body.info.number
+    let package     =   req.body.info.package
+    let gender      =   req.body.info.gender
+    let specific    =   req.body.info.specific
+    let gmail       = req.body.info.gmail
+    let imgUrl      =    req.body.info.imgUrl
+    let joindate    = Date()
 
-    let name= req.body.info.name
-    let number =  req.body.info.number
-    L(req.body.info)
-    // let data = new membersDB({
-    //     name,   
-    //     number,
-    // })
-   
-    // data.save()
-    // .then((ress)=>res.json(ress))   
+    let card = 2; //  note this line to updatein setex
+    date.setMonth(Number(req.body.info.package))
+    let expiry  = date
+    
+        let data = new membersDB({
+            name,   
+            number,
+            package,
+            gender,
+            specific,
+            gmail,
+            joindate,
+            expiry,
+            imgUrl,
+            card
+        })
+        data.save()
+        .then((ress)=>res.json(ress))   
+        .catch(err => L(err))
 })
 
 let member =  new Array()
@@ -39,19 +58,5 @@ member = []
 
 
 module.exports = router
-
-let now  = new Date()
-let Expiry  = new Date()
-let package = 3
-Expiry.setMonth(4)
-
-L( Expiry.toLocaleDateString())
-
-
-
-
-
-
-
 
 
