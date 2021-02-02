@@ -6,10 +6,10 @@ import Exercise from "./content/Exercise"
 import Timer from "./content/Timer"
 
 export default function Member(){
-    let Proimage="https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-512.png"
+    
+    const  Params = useParams()
+    const [notes, setNotes] = useState(0)
 
-const  Params = useParams()
-const [notes, setNotes] = useState(0)
 
 let st={"width":"200"}
 useEffect(()=>{
@@ -26,12 +26,12 @@ useEffect(()=>{
             <div className="col-sm">
                 <div className="card bg-light " style={st} >
                     
-                    <img className="card-img-top" src={Proimage} alt="Cardimage"  />
+                    <img className="card-img-top" src={notes.imgUrl} alt="Cardimage"  />
 
                     <div className="card-body">
                     <h4 className="card-title"> {notes.name}</h4>
                     <p className="card-text">
-                        your Number:{notes.number}
+                        Card:{notes.card}
                     </p>
                     {/* <a href="#" className="btn btn-primary">See Profile</a> */}
                     </div>

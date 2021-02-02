@@ -6,6 +6,7 @@ router.route("/save").post((req,res) =>{
     let date  = new Date()
     
     let name        = req.body.info.Name
+    let age        = req.body.info.age
     let number      =  req.body.info.number
     let package     =   req.body.info.package
     let gender      =   req.body.info.gender
@@ -21,6 +22,7 @@ router.route("/save").post((req,res) =>{
         let data = new membersDB({
             name,   
             number,
+            age,
             package,
             gender,
             specific,

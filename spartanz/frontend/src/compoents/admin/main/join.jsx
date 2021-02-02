@@ -8,7 +8,8 @@ export default function Join(){
  
     let [input,setInput] = useState(0)
 
-        
+
+
     function handleChange(event){
 
         const {name,value} = event.target 

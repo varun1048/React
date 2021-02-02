@@ -13,7 +13,21 @@ export default function Bio(){
     let     [assessment,setAssessment] =   useState([])
     let     [workout,setWorkout] = useState([])
 
-    
+    let packageing = () => {
+        if(info.package === "2"){
+            return "Monthly"
+        }
+        if(info.package === "4"){
+            return "Quartely"
+        }
+        if(info.package === "7"){
+            return "Half yearly"
+        }
+        if(info.package === "13"){
+            return "Annual"
+        }
+        
+    }
      useEffect(()=>{
         axios.post("http://localhost:5000/admin/bio",{"id": Params.id})
         .then(datas => {
@@ -39,7 +53,7 @@ export default function Bio(){
                 break;
         }
     }
-
+// console.log(info)
     let st={"width":"200"}
     return    <div className="container-fluid ">
      <div  className="row ">
@@ -54,20 +68,33 @@ export default function Bio(){
                     <ul className="list-group ">
                         <li className="list-group-item  d-flex justify-content-between align-items-center">
                             Card Number
-                            <span className="badge badge-primary badge-pill">3</span>
+                            <span className="badge badge-primary badge-pill">{info.card}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             Number of days more 
-                            <span className="badge badge-primary badge-pill">16</span>
+                            <span className="badge badge-primary badge-pill">{info.card}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             age
-                            <span className="badge badge-primary badge-pill">3</span>
+                            <span className="badge badge-primary badge-pill">{info.age}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             Gender
-                            <span className="badge badge-primary badge-pill">male</span>
+                            <span className="badge badge-primary badge-pill">{info.gender}</span>
                         </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            Number
+                            <span className="badge badge-primary badge-pill">{info.number}</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            Package
+                            <span className="badge badge-primary badge-pill">{packageing()}</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            Gmail
+                            <span className="badge badge-primary badge-pill">{info.gmail}</span>
+                        </li>
+                        
 
                     </ul> 
                 </div>
@@ -82,7 +109,6 @@ export default function Bio(){
                             <div className="card-body">
                             <h4 className="card-title text-center"> {info.name}</h4>
                         
-                            {/* <a href="#" className="btn btn-primary">See Profile</a> */}
                             </div>
                         </div>
                     </div>
