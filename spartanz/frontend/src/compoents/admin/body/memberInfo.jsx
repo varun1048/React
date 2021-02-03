@@ -45,7 +45,7 @@ export default function MemberInfo(){
 
 
     
-    return    <div className="container ">
+    return    <div className="container-fluid  ">
      <div  className="row">
         <AdminLinks />
 
@@ -58,7 +58,7 @@ export default function MemberInfo(){
                     placeholder="Enter"/>
                 </div>
             </form>
-            <table className="table table-hover table-dark">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>Name</th>

@@ -2,7 +2,7 @@ import Fess from "../../membersF/body/fees";
 import AdminLinks from "./adminLinks";
 
 export default function Package(){
-    return    <div className="container">
+    return    <div className="container-fluid ">
      <div  className="row">
         <AdminLinks />
         <div className="col-lg-9">

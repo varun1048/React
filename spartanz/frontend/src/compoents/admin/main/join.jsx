@@ -4,14 +4,9 @@ import {useHistory} from 'react-router-dom'
 
 export default function Join(){
     const history = useHistory()
-    // let L = inner =>console.log(inner)
- 
     let [input,setInput] = useState(0)
 
-
-
     function handleChange(event){
-
         const {name,value} = event.target 
         setInput(prevInput =>{
             return {
@@ -23,9 +18,7 @@ export default function Join(){
 
     function handleClick(event){
         event.preventDefault();
-        // L(input)
-
-        
+      
         if(input.name !== 0 && input.number !== 0  ){
             axios.post("http://localhost:5000/members/save",
             {
@@ -35,6 +28,10 @@ export default function Join(){
                 history.push('/admin')
                 
             })
+
+        }
+        else{
+            alert("fill all box")
         }
     }
 

@@ -5,7 +5,9 @@ const router = express.Router()
 const membersDB = require("../models/mongoModels")
 
 router.route("/getAll").get((req,res)=>{
-    membersDB.find().then(datas => res.json(datas) )
+    membersDB.find()
+    .then(datas => res.json(datas) )
+    .catch(err => console.log("err on getAll in router :"+  err))
 })
 
 router.route("/bio").post((req,res)=>{
@@ -54,5 +56,53 @@ router.route('/SetExerciseInfo').post((req,res)=>{
     .catch(err => console.log("on set ExerciseInfo:"+err ))
 })
 
+router.route('/ExpredPackage').get((req,res)=>{
+    membersDB.find()
+    .then(datas => {
+        let arrya = datas.sort((a, b)=>{
+            return a.expiry - b.expiry
+        })
+        return  res.json(arrya)
+    })
+    .catch(err => L("error on   ExpredPackage router \n   "+err))
 
+})
+router.route('/upDatePackage').post((req,res)=>{
+    let date  = new Date()
+
+    date.setMonth(Number(req.body.package))
+    let package     =  packageing(req.body.package)
+    console.log(req.body)
+
+    membersDB.findById(req.body.id)  //note in line
+    .then(datas => {
+        membersDB.updateOne({"_id":req.body.id},{"expiry":date})
+        .then( 
+                membersDB.updateOne({"_id":req.body.id}, {"package":package})
+                .then(res.json(datas.package +"---"+datas.expiry ))
+                .catch(err => console.log("err on updateing expiry date :" + err))
+            )
+        .catch(err => console.log("Error updateing"+ err))        
+    })
+    .catch(err => console.log("err finding update package :"+ err))
+})
+
+
+
+
+let packageing = (inner) => {
+    if(inner === "2"){
+        return "Monthly"
+    }
+    if(inner === "4"){
+        return "Quartely"
+    }
+    if(inner === "7"){
+        return "Half yearly"
+    }
+    if(inner === "13"){
+        return "Annual"
+    }
+    
+}
 module.exports = router

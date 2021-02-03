@@ -13,21 +13,6 @@ export default function Bio(){
     let     [assessment,setAssessment] =   useState([])
     let     [workout,setWorkout] = useState([])
 
-    let packageing = () => {
-        if(info.package === "2"){
-            return "Monthly"
-        }
-        if(info.package === "4"){
-            return "Quartely"
-        }
-        if(info.package === "7"){
-            return "Half yearly"
-        }
-        if(info.package === "13"){
-            return "Annual"
-        }
-        
-    }
      useEffect(()=>{
         axios.post("http://localhost:5000/admin/bio",{"id": Params.id})
         .then(datas => {
@@ -53,15 +38,38 @@ export default function Bio(){
                 break;
         }
     }
-// console.log(info)
     let st={"width":"200"}
+
+    let [input,setInput] = useState(0)
+
+    function handleChange(event){
+        const {name,value} = event.target 
+        setInput(prevInput =>{
+            return {
+                ...prevInput,
+                [name]:value    
+            }
+        })
+    }
+    function updatePackage(){
+        let obj={
+            id:info._id,
+            package:input.package
+        }
+        axios.post("http://localhost:5000/admin/upDatePackage",obj)
+        .then(console.log("sending to server"))
+        .catch(err => console.log("err on updating :" +err))
+        
+        
+    }
+
+
     return    <div className="container-fluid ">
      <div  className="row ">
         <AdminLinks />
         <br/> 
 
         <div className="m-2 col-lg-8 bg-light  ">
-{/*    */}
             <div className="row d-flex justify-content-between ">
 
             <div className="col-sm ">
@@ -87,8 +95,8 @@ export default function Bio(){
                             <span className="badge badge-primary badge-pill">{info.number}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Package
-                            <span className="badge badge-primary badge-pill">{packageing()}</span>
+                               Package
+                            <span className="badge badge-primary badge-pill">{info.package}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             Gmail
@@ -119,7 +127,9 @@ export default function Bio(){
                 <div>
                 <div className="btn-group-vertical">
 
-                    <button className="btn btn-info m-1"> Update Package  </button>
+                <button type="button" className="btn btn-primary m-1" data-toggle="modal" data-target="#exampleModalCenter">
+                    Launch demo modal
+                </button>
 
                     <button onClick={() => handleClick(info._id,"SetExercise")}
                         className="btn btn-success m-1">
@@ -198,6 +208,46 @@ export default function Bio(){
             </div>
         </div>
     </div>
-    
+    <div className="container">
+                    <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLongTitle">Update package </h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body container">
+                            <div className="form-check-inline">
+                                <label className="form-check-label">
+                                    <input type="radio" className="form-check-input" value="2"  onChange={handleChange} name="package" />Monthly
+                                </label>
+                                </div>
+                                <div className="form-check-inline">
+                                    <label className="form-check-label">
+                                        <input type="radio" className="form-check-input" value="4" onChange={handleChange} name="package" />Quartely
+                                    </label>
+                                </div>
+                                <div className="form-check-inline">
+                                    <label className="form-check-label">
+                                        <input type="radio" className="form-check-input" value="7" onChange={handleChange} name="package" />Half yearly
+                                    </label>
+                                </div>
+                                <div className="form-check-inline">
+                                    <label className="form-check-label">
+                                        <input type="radio" className="form-check-input" value="13" onChange={handleChange} name="package" />Annual
+                                    </label>
+                                </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" onClick={updatePackage}  data-dismiss="modal" className="btn btn-primary">Update</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    </div>
+   
 </div>
 }
