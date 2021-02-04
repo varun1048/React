@@ -9,7 +9,7 @@ export default function TackAssessment(){
     
     const history = useHistory()    
     const  Params = useParams()
-
+    console.log(Params)
     let [input,setInput] = useState({
         _id:Params.id,
         pushUp:0,

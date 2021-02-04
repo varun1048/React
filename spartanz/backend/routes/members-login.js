@@ -16,7 +16,8 @@ router.route("/save").post((req,res) =>{
     let imgUrl      =    req.body.info.imgUrl
     let joindate    = Date()
 
-    let card = 2; //  note this line to updatein setex
+    let card = ""; //  note this line to updatein setex
+    let days = ""; //  note this line to updatein setex
     date.setMonth(Number(req.body.info.package))
     let package     =  packageing(req.body.info.package)
     let expiry  = date
@@ -32,7 +33,8 @@ router.route("/save").post((req,res) =>{
             joindate,
             expiry,
             imgUrl,
-            card
+            card,
+            days
         })
         data.save()
         .then((ress)=>res.json(ress))   

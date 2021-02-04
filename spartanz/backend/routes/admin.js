@@ -18,9 +18,9 @@ router.route("/bio").post((req,res)=>{
 
 router.route("/assessment").post((req,res)=>{
     let obj= req.body;
+    console.log(obj)
     membersDB.findById(obj._id)  //note in line
     .then(datas => {
-        
         let tep = datas.assessment
         let id =  obj._id
         delete obj._id
@@ -30,14 +30,16 @@ router.route("/assessment").post((req,res)=>{
         .then(res.json("assessment updated"))
         .catch(err => console.log("on updateing"+ err))        
     })
-    .catch(err => console.log("on finding:"+ err))
+    .catch(err => console.log("on finding assessment:"+ err))
 })
 
 router.route('/SetExerciseDB').post((req,res)=>{
+    console.log("SetExerciseDB")
     let obj = req.body
+    console.log(req.body)
     membersDB.findById(obj.id)  //note in line
     .then(datas => {
-        membersDB.updateOne({"_id":obj.id},{"workout":obj.gymWorkout})
+        membersDB.updateOne({"_id":obj.id},{"workout":obj.gymWorkout,"card":obj.card,"days":obj.days })
         .then(res.json("assessment updated"))
         .catch(err => console.log("Error updateing"+ err))        
     })
@@ -67,42 +69,5 @@ router.route('/ExpredPackage').get((req,res)=>{
     .catch(err => L("error on   ExpredPackage router \n   "+err))
 
 })
-router.route('/upDatePackage').post((req,res)=>{
-    let date  = new Date()
 
-    date.setMonth(Number(req.body.package))
-    let package     =  packageing(req.body.package)
-    console.log(req.body)
-
-    membersDB.findById(req.body.id)  //note in line
-    .then(datas => {
-        membersDB.updateOne({"_id":req.body.id},{"expiry":date})
-        .then( 
-                membersDB.updateOne({"_id":req.body.id}, {"package":package})
-                .then(res.json(datas.package +"---"+datas.expiry ))
-                .catch(err => console.log("err on updateing expiry date :" + err))
-            )
-        .catch(err => console.log("Error updateing"+ err))        
-    })
-    .catch(err => console.log("err finding update package :"+ err))
-})
-
-
-
-
-let packageing = (inner) => {
-    if(inner === "2"){
-        return "Monthly"
-    }
-    if(inner === "4"){
-        return "Quartely"
-    }
-    if(inner === "7"){
-        return "Half yearly"
-    }
-    if(inner === "13"){
-        return "Annual"
-    }
-    
-}
 module.exports = router

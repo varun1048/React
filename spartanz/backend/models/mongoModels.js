@@ -13,6 +13,8 @@ const  schema = mongoose.Schema ({
     imgUrl:String,
 
     card:Number,
+    days:Number,
+    
     assessment:[Object],
     workout:[Object]
 

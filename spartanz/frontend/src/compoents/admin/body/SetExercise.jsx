@@ -6,32 +6,35 @@ import {useParams ,useHistory} from 'react-router-dom'
 let L = (inner)=>console.log(inner)
 export default function SetExercise(){
 
-    let     [info,setInfo]=useState(0)
+    // let     [info,setInfo]=useState(0)
     let     [lastAssessment,setLastAssessment]=useState(0)
 
     const  Params = useParams()
     const history = useHistory()
 
-
+console.log(Params)
 
     let [input,setInput] = useState({
         Exercise:"",
         Seta:"",
         Reps:"",
-        Weight:""
+        Weight:"",
+        card:"",
+        days:""
     })
 
     let [Exercises, setExercises] = useState([{
         Exercise:"warm - up",
         Sets:"1",
         Reps:"-",
-        Weight:"-"
+        Weight:"-",
     }])
 //suma
  useEffect(()=>{
+     console.log(input.card)
     axios.post("http://localhost:5000/admin/SetExerciseInfo",{"id": Params.id})
     .then(datas => {
-        setInfo(datas.data)
+        // setInfo(datas.data)
         setLastAssessment(datas.data.lastAssessment)
     } )
     .catch(err => console.log(err) )
@@ -62,7 +65,9 @@ export default function SetExercise(){
             L("varim")
             axios.post("http://localhost:5000/admin/SetExerciseDB",
                 { gymWorkout: Exercises,
-                  id: Params.id
+                  id: Params.id,
+                  card :input.card,
+                  days : input.days
             })
             .then(history.push("/admin/memberInfo"))
             .catch(err => console.log("send Exercises to db --"+ err))
@@ -73,6 +78,7 @@ export default function SetExercise(){
         }
     }
     let st={"width":"100px"}
+    let st2={"width":"15px"}
     return    <div className="container-fluid">
      <div  className="row">
         <AdminLinks />
@@ -83,18 +89,13 @@ export default function SetExercise(){
                 <h2>
                     Set Exercise 
                 </h2>
-                <button className="btn btn-info " data-toggle="collapse" data-target="#demo">Information</button>
+                <button className="btn btn-info " data-toggle="collapse" data-target="#demo">last Assessment</button>
             </div>
             <br/>
             <div id="demo" className="collapse">
-                    <div className="">
-                      age:{info.age}
-                    </div>
-                        
+                       
                 <ul className="list-group">
-                <h5>
-                    Last Assessment 
-                </h5>
+                
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                         PushUp
                         <span className="badge badge-primary badge-pill">{lastAssessment.pushUp}</span>
@@ -159,6 +160,20 @@ export default function SetExercise(){
                     </tr> 
                 
                     <tr>
+                        <td>
+                            <div className="input-group">
+                            <span className="input-group-addon m-2">Card Number</span>
+                            <input  type="text" className="form-control " name="card" onChange={handleChange} 
+                            placeholder="Enter Card number" style={st2} />
+                        </div>
+                        </td>
+                        <td>
+                        <div className="input-group">
+                            <span className="input-group-addon m-2">Number days</span>
+                            <input  type="text" className="form-control " name="days" onChange={handleChange} 
+                            placeholder="Enter days" style={st2} />
+                        </div>
+                        </td>
                         <td>
                             <button type="submit" onClick={handleClick}  className="btn btn-success"> Submit </button>
                         </td>          
