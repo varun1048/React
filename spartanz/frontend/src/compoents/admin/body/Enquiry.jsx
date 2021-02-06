@@ -25,63 +25,15 @@ export default function Enquiry(){
             }
         })
     }
-    function updatePackage(){
-        console.log(input)
-    }
 
     return    <div className="container-fluid ">
      <div  className="row">
         <AdminLinks />
             <div className="col-lg-9">
-            <div className="container">
 
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Launch demo modal
-                </button>
-
-                <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered" role="document">
-                    <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLongTitle">Update package </h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div className="modal-body container">
-                         <div className="form-check-inline">
-                            <label className="form-check-label">
-                                <input type="radio" className="form-check-input" value="2"  onChange={handleChange} name="package" />Monthly
-                            </label>
-                            </div>
-                            <div className="form-check-inline">
-                                <label classname="form-check-label">
-                                    <input type="radio" className="form-check-input" value="4" onChange={handleChange} name="package" />Quartely
-                                </label>
-                            </div>
-                            <div className="form-check-inline">
-                                <label classname="form-check-label">
-                                    <input type="radio" className="form-check-input" value="7" onChange={handleChange} name="package" />Half yearly
-                                </label>
-                            </div>
-                            <div className="form-check-inline">
-                                <label classname="form-check-label">
-                                    <input type="radio" className="form-check-input" value="13" onChange={handleChange} name="package" />Annual
-                                </label>
-                            </div>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" onClick={updatePackage}  data-dismiss="modal" className="btn btn-primary">Update</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-
-            </div>
-
-            <table className="table">
+            <table className="table table-bordered text-center">
             <thead>
-                <tr>
+                <tr className="bg-light">
                     <th>Name</th>
                     <th>Number</th>
                     <th>Gmail</th>

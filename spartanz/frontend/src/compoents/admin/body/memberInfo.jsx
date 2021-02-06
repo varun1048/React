@@ -76,8 +76,8 @@ export default function MemberInfo(){
                                         {element.name}
                                     </Link>
                                     </td>
-                                    <td>2</td>
-                                    <td>34</td>
+                                    <td>{element.card}</td>
+                                    <td>{element.days}</td>
                                </tr> 
                             }
                      )}

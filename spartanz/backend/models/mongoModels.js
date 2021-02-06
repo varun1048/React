@@ -11,6 +11,7 @@ const  schema = mongoose.Schema ({
     joindate:Date,
     expiry:Date,
     imgUrl:String,
+    program:String,
 
     card:Number,
     days:Number,

@@ -14,7 +14,10 @@ router.route("/save").post((req,res) =>{
     let specific    =   req.body.info.specific
     let gmail       = req.body.info.gmail
     let imgUrl      =    req.body.info.imgUrl
+    let program     = req.body.info.program
+    
     let joindate    = Date()
+
 
     let card = ""; //  note this line to updatein setex
     let days = ""; //  note this line to updatein setex
