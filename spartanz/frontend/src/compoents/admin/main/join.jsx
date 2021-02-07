@@ -35,7 +35,7 @@ export default function Join(){
         }
     }
 
-
+    console.log(input)
     return <React.Fragment> <br/>
         <div   className="container p-3 bg-light"> 
             

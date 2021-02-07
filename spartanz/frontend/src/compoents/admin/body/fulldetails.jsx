@@ -1,23 +1,8 @@
-// import axios from "axios"
-// import { useEffect, useState } from "react";
-
-
 
 export default function Fulldetails(pros){  
-    // let     [info,setInfo]=useState(0) 
     let info = pros.info
     let assessment = Array((pros.assessment))
     let workout = Array((pros.workout))
-// console.log( )
-    // useEffect(()=>{
-    //     axios.post("http://localhost:5000/admin/bio",{"id": Params.id})
-    //     .then(datas => {
-    //         setInfo(datas.data)
-    //         // setAssessment(datas.data.assessment)
-    //         // setWorkout( datas.data.workout )
-    //     })
-    //     .catch(err => console.log(err) )
-    // })
     
     return <div className=""> 
     <div className="row m-2">
@@ -50,7 +35,7 @@ export default function Fulldetails(pros){
                 </li>
                 <li class="list-group-item d-flex  justify-content-between align-items-center">
                     Program
-                    <span class="badge bg-primary text-white rounded-pill">{info.program} note</span>
+                    <span class="badge bg-primary text-white rounded-pill">{info.program} </span>
                 </li>
             </ul>
         </div>

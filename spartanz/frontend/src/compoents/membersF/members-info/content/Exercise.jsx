@@ -30,9 +30,9 @@ export default function    Exercise(){
         {   workout.map( (element ,i) =>{
                 return <tr key={  (i).toString() } >   
                     <td >{element.Exercise}</td>
-                    <td >{element.Sets}</td>
+                    {/* <td >{element.Sets}</td>
                     <td >{element.Reps}</td>
-                    <td >{element.Weight} Kg  </td>
+                    <td >{element.Weight} Kg  </td> */}
                 </tr>
                })}
 

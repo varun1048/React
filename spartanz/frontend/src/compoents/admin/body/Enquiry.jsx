@@ -14,18 +14,8 @@ export default function Enquiry(){
         })
         .catch(err => console.log(err) )
     })
-    let [input,setInput] = useState(0)
-
-    function handleChange(event){
-        const {name,value} = event.target 
-        setInput(prevInput =>{
-            return {
-                ...prevInput,
-                [name]:value    
-            }
-        })
-    }
-
+    
+    
     return    <div className="container-fluid ">
      <div  className="row">
         <AdminLinks />

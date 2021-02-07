@@ -14,13 +14,15 @@ router.route("/save").post((req,res) =>{
     let specific    =   req.body.info.specific
     let gmail       = req.body.info.gmail
     let imgUrl      =    req.body.info.imgUrl
-    let program     = req.body.info.program
-    
+    let program     = req.body.info.programType
     let joindate    = Date()
 
 
-    let card = ""; //  note this line to updatein setex
-    let days = ""; //  note this line to updatein setex
+    let card = ""; 
+    let days = ""; 
+
+    let autograph = false
+
     date.setMonth(Number(req.body.info.package))
     let package     =  packageing(req.body.info.package)
     let expiry  = date
@@ -36,33 +38,39 @@ router.route("/save").post((req,res) =>{
             joindate,
             expiry,
             imgUrl,
+            program,
+
             card,
-            days
+            days,
+
+            autograph 
         })
         data.save()
         .then((ress)=>res.json(ress))   
         .catch(err => L( "err on members-login  /save router  :"+ err ))
 })
 
-let member =  new Array()
 router.route('/profile').post((req,res)=>{
     membersDB.findOne({"number":String(req.body.number)})
     .then(datas=>{
         res.json(datas)
-        if(!member.includes(datas.name)){   
-            member.push( datas.name)
-        }
+        // if(!member.includes(datas.name)){   
+        //     member.push( datas.name)
+        // }
     })
     .catch((err)=>{
-        res.json(err)
+        console.log("err on members-login server:\n")
     })
 })
 
-router.route('/live').get((req,res)=>{
-    res.json(member)
-})
-member = []
+router.route('/live').post((req,res)=>{
+    res.json([])
 
+})
+router.route('/live').get((req,res)=>{
+    res.json([])
+
+})
 
 let packageing = (inner) => {
     if(inner === "2"){

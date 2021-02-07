@@ -37,11 +37,11 @@ export default function TackAssessment(){
         } 
     }
 
-return    <div className="container">
+return    <div className="container-fluid">
      <div  className="row">
         <AdminLinks />
         <div className="col-lg-9 ">
-        
+            
         <h2>
             Assessment Test
         </h2> <br/>  
