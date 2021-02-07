@@ -36,11 +36,11 @@ router.route("/assessment").post((req,res)=>{
 router.route('/SetExerciseDB').post((req,res)=>{
     console.log("SetExerciseDB")
     let obj = req.body
-    console.log(req.body)
+    L(obj.days[0])
     membersDB.findById(obj.id)  //note in line
     .then(datas => {
-        membersDB.updateOne({"_id":obj.id},{"workout":obj.gymWorkout,"card":obj.card,"days":obj.days })
-        .then(res.json("assessment updated"))
+        membersDB.updateOne({"_id":obj.id},{"workout":obj.days,"card":obj.card,"days":obj.days})
+        .then(console.log("assessment updated"))
         .catch(err => console.log("Error updateing"+ err))        
     })
     .catch(err => console.log("on finding SetExerciseDB :"+ err))

@@ -17,7 +17,7 @@ const  schema = mongoose.Schema ({
     days:Number,
     
     assessment:[Object],
-    workout:[Object],
+    workout:[Array],
     dates:[Date],
 
     autograph :Boolean
