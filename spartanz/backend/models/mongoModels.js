@@ -17,7 +17,7 @@ const  schema = mongoose.Schema ({
     days:Number,
     
     assessment:[Object],
-    workout:[Array],
+    workout:[Array , Array],
     dates:[Date],
 
     autograph :Boolean
@@ -25,5 +25,4 @@ const  schema = mongoose.Schema ({
 })
 
 const members = mongoose.model("members",schema)
-
 module.exports = members    

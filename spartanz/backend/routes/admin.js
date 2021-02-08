@@ -16,47 +16,52 @@ router.route("/bio").post((req,res)=>{
     .catch(err => console.log("on bio" +err))
 })
 
+
 router.route("/assessment").post((req,res)=>{
     let obj= req.body;
-    console.log(obj)
     membersDB.findById(obj._id)  //note in line
     .then(datas => {
         let tep = datas.assessment
         let id =  obj._id
         delete obj._id
-        
         tep.push(obj)
+
         membersDB.updateOne({"_id":id},{"assessment":tep})
-        .then(res.json("assessment updated"))
+        .then( ()=> {
+            L("assessment updated")
+            return res.json("assessment updated")
+        })
         .catch(err => console.log("on updateing"+ err))        
     })
     .catch(err => console.log("on finding assessment:"+ err))
 })
 
 router.route('/SetExerciseDB').post((req,res)=>{
-    console.log("SetExerciseDB")
     let obj = req.body
-    L(obj.days[0])
     membersDB.findById(obj.id)  //note in line
     .then(datas => {
-        membersDB.updateOne({"_id":obj.id},{"workout":obj.days,"card":obj.card,"days":obj.days})
-        .then(console.log("assessment updated"))
-        .catch(err => console.log("Error updateing"+ err))        
+        // ,"card":obj.card,"days":obj.days
+        membersDB.updateMany({"_id":obj.id},{"workout":obj.days,"card":obj.card,"days":obj.numberofDays})
+        .then( ()=> {
+            L("Exercise updated")
+            return res.json("Exercise updated")
+        })
+        .catch(err => console.log("Error SetExerciseDB updateing :"+ err))        
     })
     .catch(err => console.log("on finding SetExerciseDB :"+ err))
 })
 
-router.route('/SetExerciseInfo').post((req,res)=>{
-    membersDB.findOne({"_id":String(req.body.id)})
-    .then(datas =>{
-        let hub={   //to send the dats modifaied
-            age:22,
-            lastAssessment:datas.assessment[ (datas.assessment.length )-1]
-        }
-        return res.json(hub)
-    } )  
-    .catch(err => console.log("on set ExerciseInfo:"+err ))
-})
+// router.route('/SetExerciseInfo').post((req,res)=>{
+//     membersDB.findOne({"_id":String(req.body.id)})
+//     .then(datas =>{
+//         let hub={   //to send the dats modifaied
+//             age:22,
+//             lastAssessment:datas.assessment[ (datas.assessment.length )-1]
+//         }
+//         return res.json(hub)
+//     } )  
+//     .catch(err => console.log("on set ExerciseInfo:"+err ))
+// })
 
 router.route('/ExpredPackage').get((req,res)=>{
     membersDB.find()

@@ -4,6 +4,7 @@ import {Link, useParams} from 'react-router-dom'
 
 import AdminLinks from "./adminLinks";
 import Fulldetails from "./fulldetails"
+import FullExercise from "./FullExercise"
 export default function Bio(){  
 
     const  Params = useParams()
@@ -56,6 +57,7 @@ export default function Bio(){
         <br/> 
 
         <div className="m-2 col-lg-8 bg-light  ">
+            <FullExercise pros={info.workout}/>
             <div className="row d-flex justify-content-between ">
 
             <div className="col-sm ">
@@ -121,7 +123,7 @@ export default function Bio(){
 
                     <button className="btn btn-danger m-1" data-toggle="collapse" data-target="#demo"> Lsat Assessment</button>
                     <button className="btn btn-danger m-1" data-toggle="collapse" data-target="#Exercise">Doing  Exercise</button>
-                    <button type="button" class="btn btn-dark m-1" data-toggle="modal" data-target=".bd-example-modal-lg">Full details</button>
+                    <button type="button" className="btn btn-dark m-1" data-toggle="modal" data-target=".bd-example-modal-lg">Full details</button>
 
                         </div>
 
@@ -135,29 +137,7 @@ export default function Bio(){
 
                 <div id="Exercise" className="collapse"  data-parent="#accordion">
                     <h3>Workout</h3>
-                    <table className="table table-striped table-bordered  ">
-                        <thead className=" ">
-                            <tr>
-                                <th>Exercise</th>
-                                <th>Sets</th>
-                                <th>Reps</th>
-                                <th>Weight</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {      workout.map( (element ,i) =>{
-                            return <tr key={  (i).toString() } >   
-                                <td >{element.Exercise}</td>
-                                {/* <td >{element.Sets}</td>
-                                <td >{element.Reps}</td>
-                                <td >{element.Weight} Kg  </td> */}
-                            </tr>
-                            })}
-
-                        </tbody>
-                    </table>
-
+              
                 </div>
 
                 <div id="demo" className="collapse"   data-parent="#accordion">
@@ -227,7 +207,7 @@ export default function Bio(){
                 </div>
             </div>
             </div>
-            <div className="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div className="modal fade bd-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <Fulldetails info={info} assessment={assessment} workout={workout} />

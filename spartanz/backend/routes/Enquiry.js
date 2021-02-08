@@ -14,8 +14,3 @@ router.route("/").get((req,res) =>{
     .catch(err => console.log(err))
 })
 module.exports = router
-
-
-let ary = ['v','g','f'] 
-let out = ary.splice(1,0,'e')
-console.log()
