@@ -51,18 +51,6 @@ router.route('/SetExerciseDB').post((req,res)=>{
     .catch(err => console.log("on finding SetExerciseDB :"+ err))
 })
 
-// router.route('/SetExerciseInfo').post((req,res)=>{
-//     membersDB.findOne({"_id":String(req.body.id)})
-//     .then(datas =>{
-//         let hub={   //to send the dats modifaied
-//             age:22,
-//             lastAssessment:datas.assessment[ (datas.assessment.length )-1]
-//         }
-//         return res.json(hub)
-//     } )  
-//     .catch(err => console.log("on set ExerciseInfo:"+err ))
-// })
-
 router.route('/ExpredPackage').get((req,res)=>{
     membersDB.find()
     .then(datas => {
@@ -75,4 +63,38 @@ router.route('/ExpredPackage').get((req,res)=>{
 
 })
 
+
+
+router.route('/SetExerciseInfo').post((req,res)=>{
+    membersDB.findOne({"_id":"602066e49d77180768f08332"})
+    .then(datas =>{
+    //    datas.workout.map(e => e.map(r => L(r)) )
+        // L(datas.workout)
+        return res.json("asdf")
+        
+    } )  
+    .catch(err => console.log("on set ExerciseInfo:"+err ))
+})
+
+
+
+
+
 module.exports = router
+
+
+
+
+
+
+// router.route('/SetExerciseInfo').post((req,res)=>{
+//     membersDB.findOne({"_id":String(req.body.id)})
+//     .then(datas =>{
+//         let hub={   //to send the dats modifaied
+//             age:22,
+//             lastAssessment:datas.assessment[ (datas.assessment.length )-1]
+//         }
+//         return res.json(hub)
+//     } )  
+//     .catch(err => console.log("on set ExerciseInfo:"+err ))
+// })

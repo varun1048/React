@@ -4,7 +4,6 @@ import {Link, useParams} from 'react-router-dom'
 
 import AdminLinks from "./adminLinks";
 import Fulldetails from "./fulldetails"
-import FullExercise from "./FullExercise"
 export default function Bio(){  
 
     const  Params = useParams()
@@ -49,7 +48,13 @@ export default function Bio(){
         
         
     }
-
+    function ArryaList (){
+        // let ar = (info.workout)
+        let out =  [info.workout]
+        let e = out[0]
+        console.log (e.lenght )
+        return <div>a</div>
+    }
 
     return    <div className="container-fluid ">
      <div  className="row ">
@@ -57,7 +62,14 @@ export default function Bio(){
         <br/> 
 
         <div className="m-2 col-lg-8 bg-light  ">
-            <FullExercise pros={info.workout}/>
+
+            <div className="container m-2">
+            {<ArryaList />}
+                {/* { Array(info.workout).map( (e ,i) => <div kay={i} > { e} </div> )} */}
+
+            </div>
+
+
             <div className="row d-flex justify-content-between ">
 
             <div className="col-sm ">
