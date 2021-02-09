@@ -49,12 +49,18 @@ export default function Bio(){
         
     }
     function ArryaList (){
-        // let ar = (info.workout)
-        let out =  [info.workout]
-        let e = out[0]
-        console.log (e.lenght )
-        return <div>a</div>
-    }
+        // console.log(workout.map(e => e))
+        let arr= workout
+
+        return <table className="table">
+            
+                <tbody>
+                    {arr.map( (e , i1) =>{
+                       return <tr key={i1}><td>Day {i1}</td>{e.map( (f ,i2)  =><td key={i2}>{f}</td>)}</tr>    
+                    })}
+                </tbody>
+            </table>
+            }
 
     return    <div className="container-fluid ">
      <div  className="row ">
@@ -63,11 +69,7 @@ export default function Bio(){
 
         <div className="m-2 col-lg-8 bg-light  ">
 
-            <div className="container m-2">
-            {<ArryaList />}
-                {/* { Array(info.workout).map( (e ,i) => <div kay={i} > { e} </div> )} */}
 
-            </div>
 
 
             <div className="row d-flex justify-content-between ">
@@ -134,7 +136,20 @@ export default function Bio(){
                     </Link> 
 
                     <button className="btn btn-danger m-1" data-toggle="collapse" data-target="#demo"> Lsat Assessment</button>
-                    <button className="btn btn-danger m-1" data-toggle="collapse" data-target="#Exercise">Doing  Exercise</button>
+                    {/* <button className="btn btn-danger m-1" data-toggle="collapse" data-target="#Exercise"></button> */}
+
+                    <button type="button" className="btn btn-danger m-1" data-toggle="modal" data-target=".bd-example2-modal-lg">Doing  Exercise</button>
+
+                    <div className="modal fade bd-example2-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-lg">
+                            <div className="modal-content">
+                                {<ArryaList />}  
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <button type="button" className="btn btn-dark m-1" data-toggle="modal" data-target=".bd-example-modal-lg">Full details</button>
 
                         </div>

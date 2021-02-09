@@ -10,6 +10,21 @@ export default function SetExercise(){
     let [out,setout] = useState([])
     let  [Exercise ,setExercise] = useState('')
 
+    function ArryaList (){
+        let arr=  days
+
+        return <table className="table table-striped ">
+            
+                <tbody>
+                    {arr.map( (e , i1) =>{
+                       return <tr key={i1}><td>Day {i1+1}</td>{e.map( (f ,i2)  =><td key={i2}>{f}</td>)}</tr>    
+                    })}
+                </tbody>
+            </table>
+            }
+
+
+
     let [edit ,setEdit] = useState({
         on : false,
         index:"",
@@ -60,7 +75,6 @@ export default function SetExercise(){
     }
 
     const  Params = useParams()
-console.log()
     function TotalSubbmint(){
         let obj = {
             card,
@@ -106,9 +120,9 @@ console.log()
 
                         <span className="badge bg-light text-dark m-1">{  days.length+1}</span>     </button>
 
-                        <button type="button" className="btn btn-secondary m-1"  onClick={TotalSubbmint}>set Exercise</button>
+                        <button type="button" className="btn btn-secondary m-1"   onClick={TotalSubbmint}>update Exercise</button>
                         <Link to={`/admin/bio/${Params.id}`} 
-                            className="btn btn-success m-1" >
+                            className="btn btn-warning m-1" >
                                 Bio
                         </Link> 
                 </div>
@@ -131,6 +145,7 @@ console.log()
                 </ul> 
             </div>
 
+       {<ArryaList />}
        </div>
 
     </div>

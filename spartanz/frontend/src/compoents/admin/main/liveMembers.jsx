@@ -5,7 +5,7 @@ export default function LiveMembers(){
     let [members,setMembers] = useState([])
 
     useEffect(()=>{
-        axios.post("http://localhost:5000/members/live")
+        axios.post("http://localhost:5000/adminTwo/live")
         .then(datas =>{
             setMembers(datas.data)
         })
@@ -19,6 +19,7 @@ export default function LiveMembers(){
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>

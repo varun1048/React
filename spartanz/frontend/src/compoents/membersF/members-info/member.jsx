@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import {useParams} from 'react-router-dom'
 
 import Exercise from "./content/Exercise"
-import Timer from "./content/Timer"
 
 export default function Member(){
     
@@ -19,6 +18,15 @@ useEffect(()=>{
         })
         
     })
+    let btn = (false)?true:false 
+    function toSending(){
+        btn=false
+        console.log(btn)
+        axios.post("http://localhost:5000/adminTwo/live",{"id":notes._id})
+        .then(()=>console.log("updeted"))
+        .catch(()=> console.log("of"))
+    }
+
     return <div className="m-5">
 
         <div className="row">
@@ -47,11 +55,12 @@ useEffect(()=>{
             </div>
 
             <div className="col">
-                <Timer />
+                <button type="submit" className="btn btn-success "   onClick={toSending} disabled={btn}>{(btn)?"submited":"submit"}
+                <span className="badge badge-light text-dark"> {Date().slice(0,15)}</span>  </button>
+                Days more :{notes.days}
             </div>
 
         </div>
-        <div className="row">
-        </div>
+
     </div>
 }

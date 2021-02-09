@@ -82,11 +82,6 @@ router.route('/SetExerciseInfo').post((req,res)=>{
 
 module.exports = router
 
-
-
-
-
-
 // router.route('/SetExerciseInfo').post((req,res)=>{
 //     membersDB.findOne({"_id":String(req.body.id)})
 //     .then(datas =>{
