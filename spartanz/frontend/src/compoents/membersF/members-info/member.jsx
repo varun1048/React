@@ -19,14 +19,15 @@ useEffect(()=>{
         
     })
     let btn = (false)?true:false 
+
     function toSending(){
         btn=false
         console.log(btn)
-        axios.post("http://localhost:5000/adminTwo/live",{"id":notes._id})
+        axios.post("http://localhost:5000/adminTwo/live",{"id":notes._id,"name":notes.name,"days":notes.days })
         .then(()=>console.log("updeted"))
-        .catch(()=> console.log("of"))
+        .catch((err)=> console.log("updating live member"))
     }
-
+    
     return <div className="m-5">
 
         <div className="row">

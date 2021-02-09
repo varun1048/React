@@ -8,12 +8,13 @@ import "../style/Anavbar.css"
 
 
 export default function Anavbar(params) {
-    let [count,setCount] =  useState(0)
+    let [count,setCount] =  useState([])
     useEffect(()=>{
-        axios.get("http://localhost:5000/members/live")
-        .then(datas =>{          
-            setCount(datas.data.length)
+        axios.post("http://localhost:5000/adminTwo/live2")
+        .then(datas =>{
+            setCount(datas.data.array)
         })
+
     })
 
     return <nav className="navbar   S-nav
@@ -48,7 +49,7 @@ export default function Anavbar(params) {
         <li className="nav-item ">
             <Link to="/admin/liveMembers"  className="nav-item Anavbar nav-link ">
 
-                Live Members <span className ="badge badge-light">{count}</span>
+                Live Members <span className ="badge badge-light">{count.length}</span>
             </Link>
         </li>
     </ul>
