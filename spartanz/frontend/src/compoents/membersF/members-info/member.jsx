@@ -52,7 +52,7 @@ useEffect(()=>{
                     Today Exercise
                 </h3>
 
-                    <Exercise />
+                    <Exercise days={notes.days} />
             </div>
 
             <div className="col">

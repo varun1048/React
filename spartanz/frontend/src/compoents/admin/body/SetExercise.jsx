@@ -120,7 +120,23 @@ export default function SetExercise(){
 
                         <span className="badge bg-light text-dark m-1">{  days.length+1}</span>     </button>
 
-                        <button type="button" className="btn btn-secondary m-1"   onClick={TotalSubbmint}>update Exercise</button>
+                        {/* <button type="button" className="btn btn-secondary m-1"   onClick={TotalSubbmint}>update Exercise</button> */}
+
+                        <button type="button" className="btn btn-danger m-1" onClick={TotalSubbmint}
+                        data-toggle="modal" data-target=".bd-example2-modal-lg">update Exercise</button>
+
+                        <div className="modal fade bd-example2-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-lg">
+                                <div className="modal-content text-success">
+                                 <h3>
+                                    successfully Seted Exercise
+                                </h3>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <Link to={`/admin/bio/${Params.id}`} 
                             className="btn btn-warning m-1" >
                                 Bio

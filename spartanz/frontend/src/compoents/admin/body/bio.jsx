@@ -49,18 +49,38 @@ export default function Bio(){
         
     }
     function ArryaList (){
-        // console.log(workout.map(e => e))
-        let arr= workout
+        let arr =  (workout)
+        return <div>            
+            {arr.map( (element,i )=>{
+                return <div key={i}>
+                    <h4>
+                        Day {(i+1)} <br/>
+                    </h4>
+                    <table className="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Workout</th>
+                                <th>sets</th>
+                                <th>Reps</th>
+                            </tr>
+                        </thead>
 
-        return <table className="table">
+                        <tbody>
+                            {element.map((f ,i)=>{ 
+                                return <tr key={i}>
+                                    <td>{f}</td>
+                                    <td>{(Number(info.days)<=34)?"3":"2" }</td>
+                                    <td>15</td>
+                                </tr>
+                                })}
+                        </tbody>
+                    </table>
+                </div>
+            } )}
             
-                <tbody>
-                    {arr.map( (e , i1) =>{
-                       return <tr key={i1}><td>Day {i1}</td>{e.map( (f ,i2)  =><td key={i2}>{f}</td>)}</tr>    
-                    })}
-                </tbody>
-            </table>
-            }
+        </div>
+    }
+
 
     return    <div className="container-fluid ">
      <div  className="row ">

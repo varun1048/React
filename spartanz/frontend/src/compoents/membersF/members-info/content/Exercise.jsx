@@ -4,11 +4,10 @@ import {useParams} from 'react-router-dom'
 
 
 
-export default function    Exercise(){
+export default function    Exercise(pros ){
 
     const [workout,setWorkout] = useState([])
     const  Params = useParams()
-
     useEffect(()=>{
         axios.post("http://localhost:5000/members/profile",{"number":Params.id})
         .then((datas)=>{
@@ -16,26 +15,40 @@ export default function    Exercise(){
         })
     })
 
-    return <table className="table table-striped table-bordered ">
-    <thead className=" ">
-        <tr>
-            <th>Exercise</th>
-            <th>Sets</th>
-            <th>Reps</th>
-            <th>Weight</th>
-        </tr>
-    </thead>
+    function ArryaList (){
+        let arr =  (workout)
+        return <div>            
+            {arr.map( (element,i )=>{
+                return <div key={i}>
+                    Day {(i+1)} <br/>
+                    <table className="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Workout</th>
+                                <th>sets</th>
+                                <th>Reps</th>
+                            </tr>
+                        </thead>
 
-        <tbody>
-        {   workout.map( (element ,i) =>{
-                return <tr key={  (i).toString() } >   
-                    <td >{element.Exercise}</td>
-                    {/* <td >{element.Sets}</td>
-                    <td >{element.Reps}</td>
-                    <td >{element.Weight} Kg  </td> */}
-                </tr>
-               })}
+                        <tbody>
+                            {element.map((f ,i)=>{ 
+                                return <tr key={i}>
+                                    <td>{f}</td>
+                                    <td>{(Number(pros.days)<=34)?"3":"2" }</td>
+                                    <td>15</td>
+                                </tr>
+                                })}
+                        </tbody>
+                    </table>
+                </div>
+            } )}
+            
+        </div>
+    }
 
-        </tbody>
-</table>
+
+
+    return <div>
+        <ArryaList />
+    </div> 
 }

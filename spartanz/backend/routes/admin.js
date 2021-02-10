@@ -93,3 +93,4 @@ module.exports = router
 //     } )  
 //     .catch(err => console.log("on set ExerciseInfo:"+err ))
 // })
+
