@@ -54,7 +54,7 @@ export default function ContactUs(){
                     </div>
                         {/* <button type="submit" className="btn btn-primary" onClick={handleClick}  >Submit</button> */}
                         <button type="button" class="btn btn-primary" onClick={handleClick}  data-toggle="modal" data-target="#myModal">
-                        Send
+                        Request
                     </button>
                 </form>
             </div>    

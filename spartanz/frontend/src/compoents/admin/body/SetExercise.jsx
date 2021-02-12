@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react";
-import {Link, useParams } from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
+
 
 import AdminLinks from "./adminLinks";
 
@@ -75,7 +76,7 @@ export default function SetExercise(){
     }
 
     const  Params = useParams()
-    function TotalSubbmint(){
+    async function TotalSubbmint(){
         let obj = {
             card,
             numberofDays,
@@ -83,10 +84,10 @@ export default function SetExercise(){
             id: Params.id
         }
 
+
         axios.post("http://localhost:5000/admin/SetExerciseDB",obj)
         .then(console.log("Ecercise updated"))
-        .catch(err => console.log("send Exercises to db --"+ err))
-    }
+        .catch(err => console.log("send Exercises to db --"+ err))    }
 
     return    <div className="container-fluid" >
 
